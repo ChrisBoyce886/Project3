@@ -3,9 +3,9 @@ import React from 'react';
 function Navbar() {
 	return (
 		<div>
-			<nav className="navbar sticky-top navbar-dark bg-dark">
-				<a href="/" className="navbar-brand">
-					Earth Trek
+			<nav className="navbar display-4 sticky-top navbar-dark bg-dark">
+				<a href="/" className="navbar-brand display-4">
+					<h3 className="display-4">Earth Trek</h3>
 				</a>
 				<ul className="nav justify-content-end">
 					<li className="nav-item">
