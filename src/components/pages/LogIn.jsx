@@ -11,7 +11,7 @@ function LogIn() {
 				<label for="Password">Password</label>
 				<input type="password" className="form-control" id="Password" placeholder="Password" />
 			</div>
-			<button type="submit" className="btn btn-primary">
+			<button type="submit" className="btn btn-primary" onClick={this.handleLogin}>
 				Submit
 			</button>
 		</form>

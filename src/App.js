@@ -8,7 +8,9 @@ import LogIn from './components/pages/LogIn';
 import SignUp from './components/pages/SignUp';
 
 class App extends Component {
-	state = {};
+	state = {
+		isAuthenticated: false
+	};
 	render() {
 		return (
 			<Router>
