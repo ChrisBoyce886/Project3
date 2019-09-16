@@ -1,8 +1,11 @@
 import React from 'react'
+import SearhBar from '../SearchBar/SearchBar'
 
 function Home() {
     return (
-        <h1>You Are Home</h1>
+        <div className="container">
+            <SearhBar></SearhBar>
+        </div>
     )
 };
 
