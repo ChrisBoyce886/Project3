@@ -9,6 +9,11 @@ function Navbar() {
 				</a>
 				<ul className="nav justify-content-end">
 					<li className="nav-item">
+						<a href="/" className="nav-link active">
+							<h4>Home</h4>
+						</a>
+					</li>
+					<li className="nav-item">
 						<a href="/AboutUs/" className="nav-link active">
 							<h4>About Us</h4>
 						</a>
