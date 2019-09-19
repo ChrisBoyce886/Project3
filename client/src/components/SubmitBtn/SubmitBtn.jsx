@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SubmitBtn = () => {
+const SubmitBtn = (props) => {
     return (
         <div>
-            <button className="btn btn-primary">Search</button>
+            <button className="btn btn-primary" onClick={props.onClick}>Search</button>
         </div>
     )
 }
