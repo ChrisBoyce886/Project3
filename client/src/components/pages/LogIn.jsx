@@ -17,6 +17,9 @@ class LogIn extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
+		// console username and password
+		// console.log(this.state)
+		
 	}
 	render() {
 		return (
