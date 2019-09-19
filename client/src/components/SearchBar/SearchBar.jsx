@@ -1,47 +1,68 @@
-import React, { Component } from "react";
+import React, {
+	Component
+} from "react";
 import API from "../../utils/API";
 import SubmitBtn from '../SubmitBtn/SubmitBtn';
-import { Container, Row, Col } from "../Grid";
-import { TrailList, TrailListItem } from "../TrailList/index";
+import {
+	Container,
+	Row,
+	Col
+} from "../Grid";
+import {
+	TrailList,
+	TrailListItem
+} from "../TrailList/index";
 
 
 
-class SearchBar extends Component{
+class SearchBar extends Component {
 	state = {
 		trails: [],
 		geoLocation: [],
-		lat : "",
-		lon : "",
-		trailSearch: ""	
+		lat: "",
+		lon: "",
+		trailSearch: ""
 	}
 	handleInputChange = event => {
 		// Destructure the name and value properties off of event.target
 		// Update the appropriate state
-	
-		const { name, value } = event.target;
+
+		const {
+			name,
+			value
+		} = event.target;
 		this.setState({
-		  [name]: value
+			[name]: value
 		});
-	  };
-
+	};
+	call = event => {
+	API.getWorld("a").then(res => console.log(res))
+	}
 	handleSubmit = event => {
-	event.preventDefault();
-	API.getGeoData(this.state.trailSearch).then(res => 
-	this.setState({lon : res.data.features[0].geometry.coordinates[0]}) ||  
-	this.setState({lat : res.data.features[0].geometry.coordinates[1]}) || API.getTrails(this.state.lat, this.state.lon).then(res => this.setState({ trails : res.data.data}))
-	.catch(err => console.log(err)))
-	.catch(err => console.log(err))
-	// this.setState({ lon : this.state.geoLocation[0]})
-	// this.setState({ lat : this.state.geoLocation[1]})
-	
-	// API.getTrails(this.state.lat, this.state.lon).then(res => 
-	// console.log("eto response",res.data.data))
-	// .catch(err => console.log(err));	
-	// console.log('tnhis is data trails',this.state.trails)
-	// API.
-}
+		event.preventDefault();
+		API.getGeoData(this.state.trailSearch).then(coordRes =>
+				API.getTrails(
+					coordRes.data.features[0].geometry.coordinates[1],
+					coordRes.data.features[0].geometry.coordinates[0]).then(res => {
+					this.setState({
+						trails: res.data.data,
+						lon: coordRes.data.features[0].geometry.coordinates[0],
+						lat: coordRes.data.features[0].geometry.coordinates[1]
+					})
 
+				})
 
+				.catch(err => console.log(err)))
+			.catch(err => console.log(err))
+		// this.setState({ lon : this.state.geoLocation[0]})
+		// this.setState({ lat : this.state.geoLocation[1]})
+
+		// API.getTrails(this.state.lat, this.state.lon).then(res =>
+		// console.log("eto response",res.data.data))
+		// .catch(err => console.log(err));
+		// console.log('tnhis is data trails',this.state.trails)
+		// API.
+	}
 
 
 render = () => {
@@ -58,7 +79,8 @@ render = () => {
 				className="form-control mr-2" name="trailSearch" />
 				<SubmitBtn
 				type="success"
-				onClick={this.handleSubmit} 
+				onClick={this.handleSubmit, this.call}
+
 				/>
 			</div>
 		</div>

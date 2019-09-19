@@ -5,7 +5,7 @@ const trailRoutes = require("./routes/api/trails");
 const PORT = process.env.PORT || 3001;
 const app = express();
 
-const passport = require("./config/passport");
+const passport = require("./server/config/passport");
 const db = require("./models")
 
 // Define middleware here
