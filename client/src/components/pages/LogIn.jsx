@@ -1,24 +1,38 @@
 import React, { Component } from 'react';
+import SubmitBtn from '../SubmitBtn/SubmitBtn'
 
 class LogIn extends Component {
 	state = {
 		username: '',
 		password: ''
 	}
+	
+	handleInputChange = (event) => {
+		const { name, value } = event.target;
+		this.setState({
+			[name]: value
+		})
+		console.log(this.state)
+	}
+
+	handleSubmit = (event) => {
+		event.preventDefault();
+		// console username and password
+		// console.log(this.state)
+		
+	}
 	render() {
 		return (
 			<form className="container mt-4">
 				<div className="form-group">
-					<label for="Username">Username</label>
-					<input type="text" className="form-control" id="Username" placeholder="Enter Username" />
+					<label htmlFor="username">Username</label>
+					<input type="text" className="form-control" name="username" value={this.state.username} onChange={this.handleInputChange} placeholder="Enter Username" />
 				</div>
 				<div className="form-group">
-					<label for="Password">Password</label>
-					<input type="password" className="form-control" id="Password" placeholder="Password" />
+					<label htmlFor="password">Password</label>
+					<input type="password" className="form-control" name="password" value={this.state.password} onChange={this.handleInputChange} placeholder="Password" />
 				</div>
-				<button type="submit" className="btn btn-primary">
-					Submit
-				</button>
+				<SubmitBtn type="success" onClick={this.handleSubmit} />
 			</form>
 		);
 	}

@@ -4,9 +4,16 @@ const morgan  = require('morgan');
 const trailRoutes = require("./routes/api/trails");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const session = require("express-session")
 
 const passport = require("./server/config/passport");
+<<<<<<< HEAD
 const db = require("./models")
+=======
+const db = require("./server/models")
+
+let syncOptions = { force: false };
+>>>>>>> 4c3840bf153fdab84bf0f0e732b9a972b7184588
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
