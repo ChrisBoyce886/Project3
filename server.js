@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const morgan  = require('morgan');
-const trailRoutes = require("./routes/api/trails");
+const trailRoutes = require("./server/routes/api/trails");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const session = require("express-session")
