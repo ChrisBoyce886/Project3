@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import SubmitBtn from '../SubmitBtn/SubmitBtn';
+import CredentialsAPI from '../../utils/CredentialsAPI';
+
 
 class SignUp extends Component {
 	state = {
@@ -21,7 +23,11 @@ class SignUp extends Component {
 		event.preventDefault();
 		if (this.state.password === this.state.retypedpassword) {
 			console.log(`Passwords are the same`);
+			console.log(process.env.SESSION_SECRET)
+			// CredentialsAPI.CreateNewUser(this.state)
 		} else {
+			// need modal stating passwords are not the same
+			// then clear out password field without other fields
 			console.log(`Passwords are not`);
 		}
 
@@ -78,7 +84,7 @@ class SignUp extends Component {
 				<div className="form-group">
 					<label htmlFor="RetypePassword">Retype Password</label>
 					<input
-						type="text"
+						type="password"
 						className="form-control"
 						name="retypedpassword"
 						value={this.state.retypedpassword}
@@ -86,7 +92,7 @@ class SignUp extends Component {
 						placeholder="Retype Your Password"
 					/>
 				</div>
-				<SubmitBtn />
+				<SubmitBtn type="success" onClick={this.handleSubmit}/>
 			</form>
 		);
 	}
