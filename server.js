@@ -40,4 +40,3 @@ db.sequelize.sync(syncOptions).then(function() {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   });
 })
-

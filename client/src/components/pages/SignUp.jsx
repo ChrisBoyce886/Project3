@@ -23,7 +23,6 @@ class SignUp extends Component {
 		event.preventDefault();
 		if (this.state.password === this.state.retypedpassword) {
 			console.log(`Passwords are the same`);
-			console.log(process.env.SESSION_SECRET)
 			// CredentialsAPI.CreateNewUser(this.state)
 		} else {
 			// need modal stating passwords are not the same
