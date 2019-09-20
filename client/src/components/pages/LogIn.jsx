@@ -12,14 +12,15 @@ class LogIn extends Component {
 		this.setState({
 			[name]: value
 		})
-		console.log(this.state)
+		// Log each typed character added on
+		// console.log(this.state)
 	}
 
 	handleSubmit = (event) => {
 		event.preventDefault();
 		// console username and password
-		// console.log(this.state)
-		
+		console.log(this.state)
+
 	}
 	render() {
 		return (
