@@ -35,24 +35,24 @@ class SearchBar extends Component {
 			[name]: value
 		});
 	};
-	call = event => {
-	API.getWorld("a").then(res => console.log(res))
-	}
+	
 	handleSubmit = event => {
 		event.preventDefault();
-		API.getGeoData(this.state.trailSearch).then(coordRes =>
-				API.getTrails(
-					coordRes.data.features[0].geometry.coordinates[1],
-					coordRes.data.features[0].geometry.coordinates[0]).then(res => {
+		API.getGeoData(this.state.trailSearch).then(({data}) => {
+			console.log(data);	
+			API.getTrails(
+					data.features[0].geometry.coordinates[1],
+					data.features[0].geometry.coordinates[0]).then(res => {
 					this.setState({
 						trails: res.data.data,
-						lon: coordRes.data.features[0].geometry.coordinates[0],
-						lat: coordRes.data.features[0].geometry.coordinates[1]
+						lon: data.features[0].geometry.coordinates[0],
+						lat: data.features[0].geometry.coordinates[1]
 					})
 
 				})
 
-				.catch(err => console.log(err)))
+				.catch(err => console.log(err))
+			})
 			.catch(err => console.log(err))
 		// this.setState({ lon : this.state.geoLocation[0]})
 		// this.setState({ lat : this.state.geoLocation[1]})
@@ -71,7 +71,7 @@ render = () => {
 		<div className="container">
 		<div className="form-group vh-100 d-flex align-items-center m-0">
 			<label htmlFor="search" className="d-flex">Where would you like to hike?</label>
-			<div class="container d-flex">
+			<div className="container d-flex">
 				<input 
 				value={this.state.trailSearch}
 				onChange={this.handleInputChange}
@@ -79,8 +79,7 @@ render = () => {
 				className="form-control mr-2" name="trailSearch" />
 				<SubmitBtn
 				type="success"
-				onClick={this.handleSubmit, this.call}
-
+				onClick={this.handleSubmit}
 				/>
 			</div>
 		</div>
