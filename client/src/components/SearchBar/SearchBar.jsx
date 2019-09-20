@@ -28,7 +28,7 @@ render = () => {
 	return (
 		<div className="form-group vh-100 d-flex align-items-center m-0">
 			<label htmlFor="search" className="d-flex">Where would you like to hike?</label>
-			<div class="container d-flex">
+			<div className="container d-flex">
 				<input 
 				value={this.state.trailSearch}
 				onChange={this.handleInputChange}
