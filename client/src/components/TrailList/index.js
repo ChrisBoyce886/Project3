@@ -5,6 +5,7 @@ import { Container, Row, Col } from "../Grid";
 import Button from "../Button"
 import "./style.css"
 import Ratings from 'react-ratings-declarative';
+import GoogleApiWrapper from '../GoogleMapsAPI/GoogleMap'
 
 
 // Exporting both RecipeList and RecipeListItem from this file
@@ -33,8 +34,8 @@ export function TrailListItem({
 
 {
   return (
-    <li className="list-group-item center" id={id}>
-       
+    <div>     
+    <li className="list-group-item center" id={id}>       
         <Row>
         <Col size="xs-2 sm-2">
             <Thumbnail src={thumbnail} />
@@ -89,5 +90,6 @@ export function TrailListItem({
              </Col>
         </Row>
     </li>
+    </div>
   );
 }
