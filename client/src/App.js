@@ -6,6 +6,7 @@ import Home from './components/pages/Home';
 import AboutUs from './components/pages/AboutUs';
 import LogIn from './components/pages/LogIn';
 import SignUp from './components/pages/SignUp';
+import UserProfile from './components/pages/UserProfile'
 
 class App extends Component {
 	state = {
