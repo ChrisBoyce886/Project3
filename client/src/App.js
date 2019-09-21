@@ -7,6 +7,8 @@ import AboutUs from './components/pages/AboutUs';
 import LogIn from './components/pages/LogIn';
 import SignUp from './components/pages/SignUp';
 
+
+
 class App extends Component {
 	state = {
 		isAuthenticated: false
