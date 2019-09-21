@@ -34,6 +34,7 @@ class SearchBar extends Component {
 		this.setState({
 			[name]: value
 		});
+		console.log(value)
 	};
 	
 	handleSubmit = event => {
