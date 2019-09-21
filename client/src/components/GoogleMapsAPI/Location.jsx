@@ -105,7 +105,7 @@ export class CurrentLocation extends React.Component {
 
     return (
       <div>
-        <div style={style} ref="map">
+        <div style={style} ref='map'>
           Loading map...
         </div>
         {this.renderChildren()}

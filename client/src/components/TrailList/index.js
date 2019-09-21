@@ -12,7 +12,10 @@ import GoogleApiWrapper from '../GoogleMapsAPI/GoogleMap'
 
 // RecipeList renders a bootstrap list item
 export function TrailList({ children }) {
-  return <ul className="list-group">{children}</ul>;
+  return <div>
+  
+    <ul className="list-group">{children}</ul>;
+    </div>
 }
 
 // RecipeListItem renders a bootstrap list item containing data from the recipe api call

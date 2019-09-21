@@ -1,5 +1,5 @@
 import React from 'react';
-import GoogleApiWrapper from '../../components/GoogleMapsAPI/GoogleMap';
+import GoogleApiWrapper, { MapContainer } from '../../components/GoogleMapsAPI/GoogleMap';
 
 
 function AboutUs() {
