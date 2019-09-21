@@ -18,7 +18,7 @@ module.exports = function (app) {
                 firstName: req.body.firstname,
                 lastName: req.body.lastname,
                 email: req.body.email,
-                username: "username",
+                username: req.body.email,
                 password: req.body.password
             })
             .then(function () {

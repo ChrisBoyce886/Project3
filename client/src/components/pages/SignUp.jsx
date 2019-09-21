@@ -8,6 +8,7 @@ class SignUp extends Component {
 		firstname: '',
 		lastname: '',
 		email: '',
+		username: '',
 		password: '',
 		retypedpassword: ''
 	};
@@ -70,6 +71,17 @@ class SignUp extends Component {
 					/>
 				</div>
 				<div className="form-group">
+					<label htmlFor="Username">Username</label>
+					<input
+						type="username"
+						className="form-control"
+						name="username"
+						value={this.state.username}
+						onChange={this.handleInputChange}
+						placeholder="Username"
+					/>
+				</div>
+				<div className="form-group">
 					<label htmlFor="Password">Password</label>
 					<input
 						type="password"
@@ -91,7 +103,7 @@ class SignUp extends Component {
 						placeholder="Retype Your Password"
 					/>
 				</div>
-				<SubmitBtn type="success" onClick={this.handleSubmit}/>
+				<SubmitBtn type="success" onClick={this.handleSubmit} />
 			</form>
 		);
 	}
