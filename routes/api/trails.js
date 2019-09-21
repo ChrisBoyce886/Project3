@@ -1,30 +1,33 @@
 const router = require("express").Router();
 const axios = require("axios");
-
+const key = process.env.TRAIL_KEY;
+const key2 = process.env.GEO_KEY;
 
 
 router.get("/trails", ({ query: { q } }, res) => {
-    axios.get("https://api.opencagedata.com/geocode/v1/json?q=",{
-      params: {
-        q
-      }},"&key=1489bf2c8a9542dda86d1b1608d5bfa5")
-      .then(({ data: { items } }) => res.json(items))
+  console.log('im here')
+    axios.get("https://api.opencagedata.com/geocode/v1/geojson?q=" + q + "&key="+key2)
+      .then(({data}) => {
+        res.json(data);
+      })
       .catch(err => res.status(422).json(err));
-  })
-
-  // // gets saved books from mongodb
-  // router.get("/books/saved", booksController.findAll)
-
-  // // saves a book to mongodb
-  // router.post("/books/saved", booksController.create);
-
-  // router.delete("/books/saved/:id", booksController.remove);
-
-// Matches with "/api/books/:id"
-// router
-//   .route("/:id")
-//   .get(booksController.findById)
-//   .put(booksController.update)
-//   .delete(booksController.remove);
-
+  })  
+router.get("/trails/:lat/:lon", (req, res) => {
+    return axios({
+        "method":"GET",
+        "url":"https://trailapi-trailapi.p.rapidapi.com/trails/explore/",
+        "headers":{
+        "content-type":"application/octet-stream",
+        "x-rapidapi-host":"trailapi-trailapi.p.rapidapi.com",
+        "x-rapidapi-key":key
+        },"params":{
+        "lat":req.params.lat,
+        "lon":req.params.lon
+        }
+        }).then(({data}) => {
+          res.json(data);
+        })
+        .catch(err => res.status(422).json(err));
+    
+})
 module.exports = router;
