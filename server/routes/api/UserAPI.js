@@ -6,11 +6,11 @@ module.exports = function (app) {
     // Post: Authenticate user
     app.post("/user/authenticate", (req, res, next) => 
     {
-        return passport.authenticate("local",(err, token, user) => {
-            console.log(user);
-            console.log(err);
-            // console.log(token);
-            res.status(200);
+        return passport.authenticate("local",(err, user) => {
+            console.log(user.id);
+            // console.log(err);
+            // res.status(200);
+            res.json(user.id)
         })(req, res, next)
     });
 

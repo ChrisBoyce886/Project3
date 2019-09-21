@@ -12,7 +12,7 @@ export default {
     AuthenticateUser: function (info) {
         return axios.post('/user/authenticate', info)
         .then(res => {
-            console.log(res)
+            console.log(res.data)
         })
     }
 }
