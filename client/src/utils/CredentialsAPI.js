@@ -1,7 +1,13 @@
 import axios from 'axios'
 
 export default {
-    // CreateNewUser = info => {
-    //     return axios.post('/api/')
-    // }
+    CreateNewUser: function (info) {
+        return axios.post('/user/create', info)
+        .then(res => {
+            // res.data.token <<<<
+            
+            console.log(res)
+            console.log(res.data)
+        })
+    }
 }
