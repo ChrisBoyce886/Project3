@@ -8,6 +8,7 @@ function AboutUs() {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, nisi cumque? Quo recusandae quis eaque expedita blanditiis veniam voluptate accusantium quaerat adipisci beatae, perspiciatis quidem ratione accusamus, consectetur consequatur perferendis.</p>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo perferendis eum ducimus vero repellendus aliquam numquam. Corporis, officiis! Provident quam pariatur esse, nobis quo tempora quibusdam ex dolorum nulla repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia cupiditate dolorem perspiciatis est reiciendis esse enim inventore numquam iusto! Repudiandae corrupti iste sapiente quaerat voluptates quidem. Voluptatibus error asperiores veritatis?</p>
         </div>
+
     )
 };
 
