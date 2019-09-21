@@ -2,11 +2,7 @@
   "name": "earthtrek",
   "version": "0.1.0",
   "private": true,
-<<<<<<< HEAD
-  "proxy":"http://localhost:3001",
-=======
   "proxy": "http://localhost:3001",
->>>>>>> 9acf0f78e816bc1c44fe51ebef7d10a9c60f4e43
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
