@@ -22,6 +22,7 @@ class LogIn extends Component {
 		// console username and password
 		// console.log(this.state)
 		CredentialsAPI.AuthenticateUser(this.state)
+		window.location.href="/UserProfile"
 	}
 	render() {
 		return (

@@ -13,6 +13,8 @@ export default {
         return axios.post('/user/authenticate', info)
         .then(res => {
             console.log(res.data)
+            let token = res.data
+            localStorage.setItem("authToken", token)
         })
     }
 }

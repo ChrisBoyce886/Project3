@@ -31,8 +31,9 @@ class SignUp extends Component {
 			console.log(`Passwords are not`);
 		}
 
-		console.log(this.state);
-	};
+		// console.log(this.state);
+		window.location.href="/"
+	}
 
 	render() {
 		return (

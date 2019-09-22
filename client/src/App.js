@@ -7,6 +7,7 @@ import AboutUs from './components/pages/AboutUs';
 import LogIn from './components/pages/LogIn';
 import SignUp from './components/pages/SignUp';
 import UserProfile from './components/pages/UserProfile'
+import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 
 class App extends Component {
 	state = {
@@ -22,6 +23,7 @@ class App extends Component {
 						<Route exact path="/AboutUs/" component={AboutUs} />
 						<Route exact path="/LogIn/" component={LogIn} />
 						<Route exact path="/SignUp/" component={SignUp} />
+						<PrivateRoute exact path="/UserProfile/" component={UserProfile}></PrivateRoute>
 					</Switch>
 				</div>
 			</Router>
