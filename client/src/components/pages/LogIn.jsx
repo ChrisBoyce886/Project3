@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SubmitBtn from '../SubmitBtn/SubmitBtn'
+import CredentialsAPI from '../../utils/CredentialsAPI'
 
 class LogIn extends Component {
 	state = {
@@ -19,8 +20,9 @@ class LogIn extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		// console username and password
-		console.log(this.state)
-
+		// console.log(this.state)
+		CredentialsAPI.AuthenticateUser(this.state)
+		window.location.href="/UserProfile"
 	}
 	render() {
 		return (
