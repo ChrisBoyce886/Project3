@@ -4,7 +4,7 @@ import React, {
 import API from "../../utils/API";
 import SubmitBtn from '../SubmitBtn/SubmitBtn';
 import {
-	Container,
+	// Container,
 	Row,
 	Col
 } from "../Grid";
@@ -39,7 +39,7 @@ class SearchBar extends Component {
 	handleSubmit = event => {
 		event.preventDefault();
 		API.getGeoData(this.state.trailSearch).then(({data}) => {
-			console.log(data);	
+			// console.log(data);	
 			API.getTrails(
 					data.features[0].geometry.coordinates[1],
 					data.features[0].geometry.coordinates[0]).then(res => {
@@ -66,7 +66,7 @@ class SearchBar extends Component {
 
 
 render = () => {
-	console.log('lat',this.state.trails)
+	// console.log('lat',this.state.trails)
 	return (
 		<div className="container">
 		<div className="form-group vh-100 d-flex align-items-center m-0">
