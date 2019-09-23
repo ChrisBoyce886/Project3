@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { GoogleApiWrapper, InfoWindow, Marker } from 'google-maps-react';
 import CurrentLocation from './Location';
 
-
 export class MapContainer extends Component {
   state = {
     showingInfoWindow: false,
@@ -45,5 +44,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: "AIzaSyCTwlnvuNPf2SQsdtovRTH6dyTablFaooE"
+  apiKey: process.env.REACT_APP_GOOGLEMAPSAPIKEY
 })(MapContainer);

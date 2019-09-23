@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": "08886",
+      "password": "rootroot",
       "database": "EarthTrek",
       "host": "localhost",
       "dialect": "mysql"

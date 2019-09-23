@@ -5,7 +5,7 @@ import { Container, Row, Col } from "../Grid";
 import Button from "../Button"
 import "./style.css"
 import Ratings from 'react-ratings-declarative';
-import GoogleApiWrapper from '../GoogleMapsAPI/GoogleMap'
+
 
 
 // Exporting both RecipeList and RecipeListItem from this file
