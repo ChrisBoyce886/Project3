@@ -10,25 +10,16 @@ import {
 import Button from '../Button';
 import './style.css';
 import Ratings from 'react-ratings-declarative';
-<<<<<<< HEAD
-
-
-=======
 import GoogleApiWrapper from '../GoogleMapsAPI/GoogleMap';
->>>>>>> 24aaca8d5c9d02610a2fe554f60fda5fdc074493
+
+
+
 
 // Exporting both RecipeList and RecipeListItem from this file
 
 // RecipeList renders a bootstrap list item
 export function TrailList({ children }) {
-<<<<<<< HEAD
-  return <div>
-  
-    <ul className="list-group">{children}</ul>;
-    </div>
-=======
 	return <ul className="list-group">{children}</ul>;
->>>>>>> 24aaca8d5c9d02610a2fe554f60fda5fdc074493
 }
 
 // RecipeListItem renders a bootstrap list item containing data from the recipe api call
@@ -43,7 +34,9 @@ export function TrailListItem({
 	rating,
 	thumbnail,
 	url,
-	length
+  	length, 
+  	lat, 
+  	lon
 	// saveTrail,
 	// deleteTrail
 }) {
@@ -89,7 +82,7 @@ export function TrailListItem({
 					</Col>
 					<Col size="xs-3 sm-3">
 						<p>
-							Rating :{rating}{' '}
+							Rating : {rating}{' '}
 							<span>
 								<Ratings rating={Math.round(rating * 10) / 10} widgetRatedColors="brown">
 									<Ratings.Widget widgetDimension="20px" />
@@ -107,6 +100,24 @@ export function TrailListItem({
 						</p>
 					</Col>
 				</Row>
+        <Row>     
+          <Col size="xs-3 sm-3">
+            <div>
+            Coordinates:            
+            <p>
+            Latitude: {lat}
+            </p>            
+            <p>
+            Longitude: {lon}
+            </p>
+            </div>
+          </Col> 
+          <Col size="xs-3 sm-3">
+            
+            <GoogleApiWrapper></GoogleApiWrapper>  
+            
+          </Col>               
+        </Row>
 			</li>
 		</div>
 	);

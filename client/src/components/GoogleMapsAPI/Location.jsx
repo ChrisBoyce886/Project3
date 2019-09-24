@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {
+	TrailList,
+	TrailListItem
+} from "../TrailList/index";
 
 const mapStyles = {
   map: {
-    position: 'absolute',
-    width: '300px',
-    height: '300px'
+    width: '600px',
+    height: '250px'
   }
 };
 export class CurrentLocation extends React.Component {
@@ -13,6 +16,7 @@ export class CurrentLocation extends React.Component {
     super(props);
 
     const { lat, lng } = this.props.initialCenter;
+    
     this.state = {
       currentLocation: {
         lat: lat,
@@ -116,7 +120,7 @@ export class CurrentLocation extends React.Component {
 export default CurrentLocation;
 
 CurrentLocation.defaultProps = {
-  zoom: 8,
+  zoom: 18,
   initialCenter: {
     lat: 35.227085,
     lng: -80.843124

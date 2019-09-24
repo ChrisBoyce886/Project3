@@ -1,10 +1,10 @@
 import React from 'react'
-import SearhBar from '../SearchBar/SearchBar'
+import SearchBar from '../SearchBar/SearchBar'
 
 function Home() {
     return (
         <div className="container">
-            <SearhBar></SearhBar>
+            <SearchBar></SearchBar>
         </div>
     )
 };

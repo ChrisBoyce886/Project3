@@ -47,8 +47,9 @@ class SearchBar extends Component {
 						trails: res.data.data,
 						lon: data.features[0].geometry.coordinates[0],
 						lat: data.features[0].geometry.coordinates[1]
+						
 					})
-
+console.log(res.data.data)
 				})
 
 				.catch(err => console.log(err))
@@ -105,7 +106,9 @@ render = () => {
 						rating={trail.rating}
 						thumbnail={trail.thumbnail}
 						url={trail.url}
-                        length={trail.length}
+						length={trail.length}
+						lat={trail.lat}
+						lon={trail.lon}
                       />
                     );
                   })}
