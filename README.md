@@ -2,7 +2,7 @@
 
 *Earth Trek* is your one stop source of information for Hiking and Biking trails across the U.S.! Type in any U.S. city and get hiking and biking trail listings within 50 miles of that location. Information for each trail includes its Name, Location, Map, a Description of the trail(s), Trail Difficulty level, Trail Distance, Hiker Rating/Reviews, and any Trail Features.
 
-The application is implemented using [React](https://reactjs.org/), [Node.js](https://nodejs.org/en/docs/), and several NPM packages which use a [MySQL](https://www.mysql.com/) database to pull and hold data. The trail information comes via an API for a national trail database called [Trail API](https://rapidapi.com/trailapi/api/trailapi) from RapidAPI.com. We also incorporated a [Google Maps API](https://www.npmjs.com/package/google-map-react) to display each trails location. 
+The application is implemented using [React](https://reactjs.org/), [Node.js](https://nodejs.org/en/docs/), and several NPM packages which use a [MySQL](https://www.mysql.com/) database to hold and pull data from. The trail information comes via an API for a national trail database called [Trail API](https://rapidapi.com/trailapi/api/trailapi) from RapidAPI.com. We also incorporated a [Google Maps API](https://www.npmjs.com/package/google-map-react) to display each trails location. 
 
 Click [here](https://earth-trek.herokuapp.com/) to view the application!
 
@@ -12,7 +12,7 @@ Click [here](https://earth-trek.herokuapp.com/) to view the application!
 1. Clone this repo - https://github.com/ChrisBoyce886/Project3.git
 2. Download then Open [MySQL Workbench](https://www.mysql.com/)
 3. Copy and paste the code from [`schema.sql`](server/db/schema.sql) into your MySQL Server and *execute* code to create your database.
-4. Open [`config.json`](server/config/config.json) and replace username and password with your personal MSQL Server information. 
+4. Open [`config.json`](server/config/config.json) and replace username and password with your personal MySQL Server information. 
 5. Run `npm install` command from the root directory.
 6. Set the `PORT` environment variable within `server.js` file to the number of your choice. `3000` is set as the default. 
 Example: `var PORT = process.env.PORT || 3000`
