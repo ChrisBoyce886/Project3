@@ -7,7 +7,7 @@ The application is implemented using [React](https://reactjs.org/), [Node.js](ht
 Click [here](https://earth-trek.herokuapp.com/) to view the application!
 
 
-## Installation 
+## Installation / Deployment
 
 1. Clone this repo - https://github.com/ChrisBoyce886/Project3.git
 2. Download then Open [MySQL Workbench](https://www.mysql.com/)
