@@ -1,13 +1,9 @@
 p {
 font-size: 18px;
 }
-<<<<<<< HEAD
-
-=======
 .scrollable {
     height: 500px; /* or any value */
     overflow-y: auto;
     border-radius: 50%;
 
 }
->>>>>>> e446d1a6f1262efed200a7d99d51fb509ab95e29
