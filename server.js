@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require("express");
 const path = require("path");
 const morgan  = require('morgan');
-const trailRoutes = require("./routes/api/trails");
+const trailRoutes = require("./server/routes/api/trails");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const session = require("express-session")
@@ -24,6 +24,7 @@ if (process.env.NODE_ENV === "production") {
 }
 // Use apiRoutes
 app.use('/api',trailRoutes)
+require("./server/routes/api/UserAPI")(app)
 
 // Initialize session for passport
 app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true}));
@@ -41,4 +42,3 @@ db.sequelize.sync(syncOptions).then(function() {
     console.log(`🌎 ==> API server now on port ${PORT}!`);
   });
 })
-
