@@ -9,6 +9,8 @@ import SignUp from './components/pages/SignUp';
 import UserProfile from './components/pages/UserProfile'
 import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 
+
+
 class App extends Component {
 	state = {
 		isAuthenticated: false

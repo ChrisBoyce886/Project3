@@ -1,0 +1,19 @@
+.navbar {
+    background-color: white !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+#EarthTrekLogo {
+    color: rgb(4, 147, 190) !important;
+    margin-left: 10%
+}
+
+#nav-item {
+    color: rgb(4, 147, 190) !important;
+}
+
+#nav-item:hover {
+    color: green !important
+}
