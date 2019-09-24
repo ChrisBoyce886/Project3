@@ -17,10 +17,10 @@ Click [here](https://earth-trek.herokuapp.com/) to view the application!
 6. Set the `PORT` environment variable within [`server.js`](server.js) file to the number of your choice. `3000` is set as the default. 
 Example: `var PORT = process.env.PORT || 3000`
 7. Run `npm start` command from the root directory
-  * If your app does not automatically open in your default browser, Navigate to your browser and enter `localhost:3000`(Or your preferred PORT number)
-  * Npm start runs the app in the development mode.
-  * The page will reload if you make edits. You will also see any lint errors in the console.
-  * The `npm test` command launches the test runner in the interactive watch mode.
+   * If your app does not automatically open in your default browser, Navigate to your browser and enter `localhost:3000`(Or your preferred PORT number)
+   * Npm start runs the app in the development mode.
+   * The page will reload if you make edits. You will also see any lint errors in the console.
+   * The `npm test` command launches the test runner in the interactive watch mode.
 
 
 ## Design Notes
