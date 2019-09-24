@@ -1,9 +1,10 @@
 import React from 'react'
 import SearhBar from '../SearchBar/SearchBar'
+import style from '../Main_styles/style.css'
 
 function Home() {
     return (
-        <div className="container">
+        <div className="main_container">
             <SearhBar></SearhBar>
         </div>
     )

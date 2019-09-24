@@ -1,0 +1,10 @@
+.main_container {
+    background: 
+    url(./images/evan-wise-jij-XX4Mr8E-unsplash.jpg)    /* image */
+    center / 100% 100% /* position / size */
+     no-repeat                /* repeat */
+     fixed                    /* attachment */
+     padding-box              /* origin */
+     content-box;
+     overflow: hidden;
+}

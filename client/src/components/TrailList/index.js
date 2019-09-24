@@ -11,7 +11,7 @@ import Ratings from 'react-ratings-declarative';
 
 // RecipeList renders a bootstrap list item
 export function TrailList({ children }) {
-  return <ul className="list-group">{children}</ul>;
+  return <ul className="list-group scrollable">{children}</ul>;
 }
 
 // RecipeListItem renders a bootstrap list item containing data from the recipe api call
@@ -40,10 +40,12 @@ export function TrailListItem({
             <Thumbnail src={thumbnail} />
           </Col>
         <Col size="xs-8 sm-8">
-          <h3>Name : {name}</h3>
+        <a className="btn btn-primary" data-toggle="collapse" href={`#collapseExample${id}`} role="button" aria-expanded="false" aria-controls={`collapseExample${id}`}><h3>Name : {name}</h3></a>
             <h4>Location :  {city}</h4>
              <h5>State : {region} </h5>
             </Col>
+          
+
             <Col size="xs-2 sm-2">
               <Button
               type="success"
@@ -57,7 +59,9 @@ export function TrailListItem({
             </Col>
 
             </Row>
-            <Row>
+            <div className="collapse" id={`collapseExample${id}`}>
+  <div className="card card-body">
+            <Row >
           <Col size="xs-12 sm-12">
             <p>Description: {description}</p>       
           </Col>
@@ -88,6 +92,8 @@ export function TrailListItem({
              <p>Distance : <span>{length}ml </span></p>
              </Col>
         </Row>
+        </div>
+</div>
     </li>
   );
 }
