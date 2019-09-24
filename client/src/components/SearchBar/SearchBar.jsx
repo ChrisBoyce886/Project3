@@ -12,7 +12,7 @@ import {
 	TrailList,
 	TrailListItem
 } from "../TrailList/index";
-
+import style from './style.css'
 
 
 class SearchBar extends Component {
@@ -34,6 +34,7 @@ class SearchBar extends Component {
 		this.setState({
 			[name]: value
 		});
+		console.log(value)
 	};
 	
 	handleSubmit = event => {
@@ -70,9 +71,9 @@ render = () => {
 	// console.log('lat',this.state.trails)
 	return (
 		<div className="container">
-		<div className="form-group vh-100 d-flex align-items-center m-0">
-			<label htmlFor="search" className="d-flex">Where would you like to hike?</label>
-			<div className="container d-flex">
+		<div className="form-group   align-items-center m-0">
+			<h2 htmlFor="search" className="text center">Find your best route!</h2>
+			<div className="container d-flex search_container">
 				<input 
 				value={this.state.trailSearch}
 				onChange={this.handleInputChange}
@@ -83,14 +84,10 @@ render = () => {
 				onClick={this.handleSubmit}
 				/>
 			</div>
-		</div>
-		{/* Bohnda added this pies here!!! */}
-		<div className="jumbotron"> 
+			<div className="jumbotron"> 
         <Row>
             <Col size="xl-12">
-              {!this.state.trails.length ? (
-                <h1 className="text-center">Lets find some trails</h1>
-              ) : (
+              
                 <TrailList>
                   {this.state.trails.map(trail => {
                     return (
@@ -113,10 +110,13 @@ render = () => {
                     );
                   })}
                 </TrailList>
-              )}
+              
             </Col>
           </Row>
           </div>
+		</div>
+		{/* Bohnda added this pies here!!! */}
+		
 		</div>
 	);
 };

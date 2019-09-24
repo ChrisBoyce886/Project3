@@ -1,7 +1,11 @@
 {
     "development": {
       "username": "root",
+<<<<<<< HEAD
       "password": "08886",
+=======
+      "password": "rootroot",
+>>>>>>> e446d1a6f1262efed200a7d99d51fb509ab95e29
       "database": "EarthTrek",
       "host": "localhost",
       "dialect": "mysql"
