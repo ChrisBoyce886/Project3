@@ -13,24 +13,20 @@ class LogIn extends Component {
 		this.setState({
 			[name]: value
 		});
-		// Log each typed character added on
-		// console.log(this.state)
+		// console.log(`Incremental logs of each typed character`, this.state)
 	};
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		// console username and password
-		// console.log(this.state)
+		// console.log(`Typed credentials`, this.state)
 		CredentialsAPI.AuthenticateUser(this.state)
 			.then((res) => {
 				console.log(res.data);
 				window.localStorage.setItem('authToken', res.data);
-				// add to local storage
 				this.props.history.push('/UserProfile');
-				// window.location.href="/UserProfile"
 			})
 			.catch((err) => {
-				//redirect or something
+				console.log(`Error from API function Authenticate User`, err);
 			});
 	};
 	render() {
