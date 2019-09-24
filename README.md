@@ -45,7 +45,7 @@ Example: `var PORT = process.env.PORT || 3000`
 * [Bootstrap 4](https://getbootstrap.com/)
 * CSS3
 * HTML5
-* Application deployed with [Heroku](https://www.heroku.com
+* Application deployed with [Heroku](https://www.heroku.com)
 
 
 **NPM Packages:**
@@ -64,7 +64,7 @@ Example: `var PORT = process.env.PORT || 3000`
 * [Passport-Local](https://www.npmjs.com/package/passport-local)
 * [Path](https://www.npmjs.com/package/path)
 * [React-Ratings-Declarative](https://www.npmjs.com/package/react-ratings-declarative)
-* [React Star Ratings](https://www.npmjs.com/package/react-star-ratings)
+* [React-Star-Ratings](https://www.npmjs.com/package/react-star-ratings)
 * [Sequelize](https://www.npmjs.com/package/sequelize)
 
 
