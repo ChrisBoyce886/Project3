@@ -20,7 +20,7 @@ Example: `var PORT = process.env.PORT || 3000`
   * If your app does not automatically open in your default browser, Navigate to your browser and enter `localhost:3000`(Or your preferred PORT number)
   * Npm start runs the app in the development mode.
   * The page will reload if you make edits. You will also see any lint errors in the console.
-  * `npm test` Launches the test runner in the interactive watch mode.
+  * The `npm test` command launches the test runner in the interactive watch mode.
 
 
 ## Design Notes
@@ -72,7 +72,7 @@ Example: `var PORT = process.env.PORT || 3000`
 
 * Sean Nguyen
 * Bohdan Dziubliuk
-* Chris Boyce
+* Christopher Boyce
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
