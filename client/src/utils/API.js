@@ -6,7 +6,9 @@ export default {
     },
     
     getTrails: function (lat, lon) {
-        return axios(`/api/trails/${lat}/${lon}`)
+        console.log("LATITUDE: " + lat)
+        console.log("LONGITUDE: " + lon)
+        return axios(`/api/trails/${lat}/${lon}`)       
         }
         
 }
