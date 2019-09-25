@@ -41,7 +41,6 @@ Example: `var PORT = process.env.PORT || 3000`
 * [Google Maps API](https://www.npmjs.com/package/google-map-react)
 * [Node.js](https://nodejs.org/en/docs/)
 * JavaScript
-* [jQuery](https://jquery.com/)
 * [Bootstrap 4](https://getbootstrap.com/)
 * CSS3
 * HTML5
