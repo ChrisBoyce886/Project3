@@ -26,7 +26,7 @@ class App extends Component {
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/AboutUs/" component={AboutUs} />
-						<Route exact path="/LogIn/" component={LogIn} setAuthenticatedState={this.setAuthenticatedState} />
+						<Route exact path="/LogIn/" render={(props) => <LogIn {...props} setAuthenticatedState={this.setAuthenticatedState}/>} />
 						<Route exact path="/SignUp/" component={SignUp} />
 						<PrivateRoute exact path="/UserProfile/" component={UserProfile}></PrivateRoute>
 					</Switch>

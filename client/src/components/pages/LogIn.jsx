@@ -18,6 +18,8 @@ class LogIn extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
+
+		
 		// console.log(`Typed credentials`, this.state)
 		CredentialsAPI.AuthenticateUser(this.state)
 			.then((res) => {
@@ -27,6 +29,7 @@ class LogIn extends Component {
 				this.props.history.push('/UserProfile');
 			})
 			.catch((err) => {
+				this.props.setAuthenticatedState(false);
 				console.log(`Error from API function Authenticate User`, err);
 			});
 	};
