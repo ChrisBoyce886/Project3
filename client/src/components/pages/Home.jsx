@@ -1,6 +1,6 @@
 import React from 'react'
 import SearhBar from '../SearchBar/SearchBar'
-import style from '../Main_styles/style.css'
+import '../Main_styles/style.css'
 
 function Home() {
     return (
