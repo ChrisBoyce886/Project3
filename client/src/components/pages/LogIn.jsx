@@ -23,6 +23,7 @@ class LogIn extends Component {
 			.then((res) => {
 				console.log(res.data);
 				window.localStorage.setItem('authToken', res.data);
+				this.props.setAuthenticatedState(true);
 				this.props.history.push('/UserProfile');
 			})
 			.catch((err) => {

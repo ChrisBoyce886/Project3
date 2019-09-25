@@ -15,15 +15,18 @@ class App extends Component {
 	state = {
 		isAuthenticated: false
 	};
+
+	setAuthenticatedState = (isAuthenticated) => this.setState({ isAuthenticated });
+	
 	render() {
 		return (
 			<Router>
 				<div>
-					<Navbar />
+					<Navbar isAuthenticated={this.state.isAuthenticated}/>
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/AboutUs/" component={AboutUs} />
-						<Route exact path="/LogIn/" component={LogIn} />
+						<Route exact path="/LogIn/" component={LogIn} setAuthenticatedState={this.setAuthenticatedState} />
 						<Route exact path="/SignUp/" component={SignUp} />
 						<PrivateRoute exact path="/UserProfile/" component={UserProfile}></PrivateRoute>
 					</Switch>
