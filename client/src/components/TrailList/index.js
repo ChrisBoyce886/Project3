@@ -48,10 +48,12 @@ export function TrailListItem({
 						<Thumbnail src={thumbnail} />
 					</Col>
 					<Col size="xs-8 sm-8">
-						<h3>Name : {name}</h3>
+					<a class="" data-toggle="collapse" href={`#multiCollapseExample1${id}`} role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+						<h3>Name : {name}</h3></a>
 						<h4>Location : {city}</h4>
 						<h5>State : {region} </h5>
 					</Col>
+					
 					<Col size="xs-2 sm-2">
 						<Button type="success" className="input-lg btn-sm ml-2">
 							Add Plan
@@ -64,7 +66,9 @@ export function TrailListItem({
 						</Button>
 					</Col>
 				</Row>
+				<div class="collapse multi-collapse" id={`multiCollapseExample1${id}`}>
 				<Row>
+					
 					<Col size="xs-12 sm-12">
 						<p>Description: {description}</p>
 					</Col>
@@ -96,7 +100,7 @@ export function TrailListItem({
 					</Col>
 					<Col size="xs-3 sm-3">
 						<p>
-							Distance : <span>{length}ml </span>
+							Distance : <span>{length}mi. </span>
 						</p>
 					</Col>
 				</Row>
@@ -118,6 +122,7 @@ export function TrailListItem({
             
           </Col>               
         </Row>
+		</div>
 			</li>
 		</div>
 	);
