@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarStyle from './NavbarStyle.css';
+import './NavbarStyle.css';
 
 const Navbar = (props) => {
 	if (props.isAuthenticated === false) {
