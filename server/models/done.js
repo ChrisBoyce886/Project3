@@ -29,8 +29,10 @@ module.exports = function(sequelize, DataTypes) {
 	Done.associate = (models) => {
 		Done.belongsToMany(models.User, {
 			as: 'Done',
-			through: 'done_trails'
+			through: 'User_Done_Relation'
 		});
 		return Done;
-	};
+    };
+    
+    return Done;
 };

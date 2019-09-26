@@ -29,8 +29,10 @@ module.exports = function(sequelize, DataTypes) {
 	Favorite.associate = (models) => {
 		Favorite.belongsToMany(models.User, {
 			as: 'Favorite',
-			through: 'favorite_trails'
+			through: 'User_Favorite_Relation'
 		});
 		return Favorite;
-	};
+    };
+    
+    return Favorite
 };

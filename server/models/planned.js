@@ -1,4 +1,4 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
 	let Plan = sequelize.define('Plan', {
 		name: {
 			type: DataTypes.STRING,
@@ -11,28 +11,30 @@ module.exports = function(sequelize, DataTypes) {
 		state: {
 			type: DataTypes.STRING,
 			allowNull: true
-        },
-        rating: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        length: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        url: {
-            type: DataTypes.STRING,
-            allowNull: true
-        }
+		},
+		rating: {
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		length: {
+			type: DataTypes.STRING,
+			allowNull: true
+		},
+		url: {
+			type: DataTypes.STRING,
+			allowNull: true
+		}
 	});
 
-Plan.associate = (models) => {
-	Plan.belongsToMany(models.User, {
-		as: 'Plan',
-		through: 'plan_trails'
-	});
-	return Plan;
-};
+	Plan.associate = (models) => {
+		Plan.belongsToMany(models.User, {
+			as: 'Plan',
+			through: 'User_Plan_Relation'
+		});
+		return Plan;
+	};
+	return Plan
+}
 
 // id={trail.id}
 // name={trail.name}

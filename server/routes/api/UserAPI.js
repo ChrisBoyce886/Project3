@@ -24,13 +24,13 @@ module.exports = function(app) {
 				password: req.body.password
 			})
 			.then(function() {
-				res.send(200).end();
+				res.sendStatus(200).end();
 			})
 			.catch(function(err) {
 				console.log(err.message);
 				res.status(401).json(err);
 			});
-		console.log(`User id of signed up user:`, user.id);
+		// console.log(`User id of signed up user:`, user.id);
 		// const payload = {
 		//     sub: user.id
 		// }
