@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-	let Planned = sequelize.define('Planned', {
+	let Plan = sequelize.define('Plan', {
 		name: {
 			type: DataTypes.STRING,
 			allowNull: true
@@ -26,12 +26,12 @@ module.exports = function(sequelize, DataTypes) {
         }
 	});
 
-Planned.associate = (models) => {
-	Planned.belongsToMany(models.User, {
-		as: 'Planned',
-		through: 'planned_trails'
+Plan.associate = (models) => {
+	Plan.belongsToMany(models.User, {
+		as: 'Plan',
+		through: 'plan_trails'
 	});
-	return Planned;
+	return Plan;
 };
 
 // id={trail.id}
