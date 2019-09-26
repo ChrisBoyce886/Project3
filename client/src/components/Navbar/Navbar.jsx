@@ -2,7 +2,7 @@ import React from 'react';
 import './NavbarStyle.css';
 
 const Navbar = (props) => {
-	if (props.isAuthenticated === false) {
+	if (!localStorage.getItem('authToken')) {
 		return (
 			<div>
 				<nav className="navbar sticky-top navbar-dark bg-dark">

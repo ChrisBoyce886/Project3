@@ -12,21 +12,21 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 
 
 class App extends Component {
-	state = {
-		isAuthenticated: false
-	};
+	// state = {
+	// 	isAuthenticated: false
+	// };
 
-	setAuthenticatedState = (isAuthenticated) => this.setState({ isAuthenticated });
+	// setAuthenticatedState = (isAuthenticated) => this.setState({ isAuthenticated });
 	
 	render() {
 		return (
 			<Router>
 				<div>
-					<Navbar isAuthenticated={this.state.isAuthenticated}/>
+					<Navbar/>
 					<Switch>
 						<Route exact path="/" component={Home} />
 						<Route exact path="/AboutUs/" component={AboutUs} />
-						<Route exact path="/LogIn/" render={(props) => <LogIn {...props} setAuthenticatedState={this.setAuthenticatedState}/>} />
+						<Route exact path="/LogIn/" component={LogIn} />
 						<Route exact path="/SignUp/" component={SignUp} />
 						<PrivateRoute exact path="/UserProfile/" component={UserProfile}></PrivateRoute>
 					</Switch>
