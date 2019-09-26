@@ -13,7 +13,7 @@ module.exports = function (sequelize, DataTypes) {
 			allowNull: true
 		},
 		rating: {
-			type: DataTypes.STRING,
+			type: DataTypes.FLOAT,
 			allowNull: true
 		},
 		length: {

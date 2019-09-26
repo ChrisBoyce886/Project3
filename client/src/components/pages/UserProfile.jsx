@@ -6,14 +6,14 @@ import Favorite_Column from '../Favorite_Column/Favorite_Column';
 
 
 const UserProfile = () => {
-	return <div className="row">
-		<div className="col-4">
+	return <div className="row mw-100">
+		<div className="col-4 h-75">
 			<Favorite_Column></Favorite_Column>
 		</div>
-		<div className="col-4">
+		<div className="col-4 h-75">
 			<Plan_Column></Plan_Column>
 		</div>
-		<div className="col-4">
+		<div className="col-4 h-75">
 			<Done_Column></Done_Column>
 		</div>
 	</div>;
