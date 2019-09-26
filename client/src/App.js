@@ -12,11 +12,8 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute'
 
 
 class App extends Component {
-	// state = {
-	// 	isAuthenticated: false
-	// };
-
-	// setAuthenticatedState = (isAuthenticated) => this.setState({ isAuthenticated });
+	state = {
+	};
 	
 	render() {
 		return (
