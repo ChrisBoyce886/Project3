@@ -52,3 +52,24 @@ module.exports = function (sequelize, DataTypes) {
   });
   return User;
 };
+
+User.associate = (models) => {
+  User.hasMany(models.Planned, {
+
+  })
+  return User
+}
+
+User.associate = (models) => {
+  User.hasMany(models.Done, {
+
+  })
+  return User
+}
+
+User.associate = (models) => {
+  User.hasMany(models.Favorite, {
+
+  })
+  return User
+}
