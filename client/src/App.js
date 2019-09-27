@@ -15,17 +15,23 @@ class App extends Component {
 		authToken: null
 	};
 
-	setAuthState = (authToken) =>
+	setAuthState = (authToken) => {
 		this.setState({
 			authToken,
 			isAuthenticated: Boolean(authToken)
 		});
+		console.log(`After setState is ran:`, this.state.authToken);
+	};
 
 	componentDidMount() {
 		const authToken = window.sessionStorage.getItem('authToken');
 
 		if (authToken) {
+			console.log(`AuthToken pulled for sessionStorage:`, authToken);
 			this.setAuthState(authToken);
+			console.log(`The state.authToken:`, this.state.authToken);
+		} else {
+			console.log('No authToken');
 		}
 	}
 
@@ -35,7 +41,11 @@ class App extends Component {
 				<div>
 					<Navbar isAuthenticated={this.state.isAuthenticated} setAuthState={this.setAuthState} />
 					<Switch>
-						<Route exact path="/" component={Home} />
+						<Route
+							exact
+							path="/"
+							render={(props) => <Home {...props} authToken={this.state.authToken} />}
+						/>
 						<Route exact path="/AboutUs" component={AboutUs} />
 						<Route
 							exact
@@ -48,7 +58,7 @@ class App extends Component {
 							path="/UserProfile"
 							component={UserProfile}
 							isAuthenticated={this.state.isAuthenticated}
-							render={(props) => <UserProfile {...props} authToken={this.state.authToken}/>}
+							authToken={this.state.authToken}
 						/>
 					</Switch>
 				</div>

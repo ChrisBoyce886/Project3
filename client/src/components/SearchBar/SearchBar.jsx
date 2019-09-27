@@ -23,6 +23,7 @@ class SearchBar extends Component {
 		lon: "",
 		trailSearch: ""
 	}
+
 	handleInputChange = event => {
 		// Destructure the name and value properties off of event.target
 		// Update the appropriate state
@@ -38,6 +39,7 @@ class SearchBar extends Component {
 	};
 	
 	handleSubmit = event => {
+		console.log("AuthToken:", this.props.authToken)
 		event.preventDefault();
 		API.getGeoData(this.state.trailSearch).then(({data}) => {
 			// console.log(data);	
