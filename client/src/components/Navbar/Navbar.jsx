@@ -26,7 +26,7 @@ class Navbar extends Component {
 								</Link>
 							</li>
 							<li className="nav-item">
-								<Link to="/AboutUs/" className="nav-link active">
+								<Link to="/AboutUs" className="nav-link active">
 									<h4 className="nav-item">About Us</h4>
 								</Link>
 							</li>
@@ -36,7 +36,7 @@ class Navbar extends Component {
 								</Link>
 							</li>
 							<li className="nav-item">
-								<Link to="/SignUp/" className="nav-link active">
+								<Link to="/SignUp" className="nav-link active">
 									<h4 className="nav-item">Sign Up</h4>
 								</Link>
 							</li>
@@ -60,12 +60,12 @@ class Navbar extends Component {
 								</Link>
 							</li>
 							<li className="nav-item">
-								<Link to="/AboutUs/" className="nav-link active">
+								<Link to="/AboutUs" className="nav-link active">
 									<h4 className="nav-item">About Us</h4>
 								</Link>
 							</li>
 							<li className="nav-item">
-								<Link to="/UserProfile/" className="nav-link active">
+								<Link to="/UserProfile" className="nav-link active">
 									<h4 id="nav-item">Profile</h4>
 								</Link>
 							</li>

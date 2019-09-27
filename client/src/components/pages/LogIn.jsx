@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SubmitBtn from '../SubmitBtn/SubmitBtn';
 import CredentialsAPI from '../../utils/CredentialsAPI';
-import { withRouter } from 'react-router-dom'
 
 class LogIn extends Component {
 	state = {
@@ -63,4 +62,4 @@ class LogIn extends Component {
 	}
 }
 
-export default withRouter(LogIn);
+export default LogIn;

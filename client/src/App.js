@@ -8,23 +8,23 @@ import LogIn from './components/pages/LogIn';
 import SignUp from './components/pages/SignUp';
 import UserProfile from './components/pages/UserProfile';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
- 
 
 class App extends Component {
 	state = {
 		isAuthenticated: false,
-		authToken: null,
+		authToken: null
 	};
 
-	setAuthState = (authToken) => this.setState({
-		authToken,
-		isAuthenticated: Boolean(authToken)
-	});
+	setAuthState = (authToken) =>
+		this.setState({
+			authToken,
+			isAuthenticated: Boolean(authToken)
+		});
 
-	componentDidMount () {
+	componentDidMount() {
 		const authToken = localStorage.getItem('authToken');
 
-		if(authToken) {
+		if (authToken) {
 			this.setAuthState(authToken);
 		}
 	}
@@ -33,16 +33,22 @@ class App extends Component {
 		return (
 			<Router>
 				<div>
-					<Navbar isAuthenticated={this.state.isAuthenticated} setAuthState={this.setAuthState}/>
+					<Navbar isAuthenticated={this.state.isAuthenticated} setAuthState={this.setAuthState} />
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route exact path="/AboutUs/" component={AboutUs} />
-						<Route exact path="/LogIn/"
+						<Route exact path="/AboutUs" component={AboutUs} />
+						<Route
+							exact
+							path="/LogIn"
 							render={(props) => <LogIn {...props} setAuthState={this.setAuthState} />}
 						/>
-						<Route exact path="/SignUp/" component={SignUp} />
-						<PrivateRoute exact path="/UserProfile/" 
-							render={(props) => <UserProfile {...props} isAuthenticated={this.state.isAuthenticated}/>}
+						<Route exact path="/SignUp" component={SignUp} />
+						<PrivateRoute
+							exact
+							path="/UserProfile"
+							component={UserProfile}
+							isAuthenticated={this.state.isAuthenticated}
+							render={(props) => <UserProfile {...props} authToken={this.state.authToken}/>}
 						/>
 					</Switch>
 				</div>
