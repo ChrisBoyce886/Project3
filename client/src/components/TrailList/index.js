@@ -34,104 +34,107 @@ export function TrailListItem({
 	length,
 	lat,
 	lon,
-	handleAdd
+	handleAdd,
+	authToken
 	// saveTrail,
 	// deleteTrail
 }) {
-	return (
-		<div id="results-container">
-			<li className="list-group-item center" id={id}>
-				<Row>
-					<Col size="xs-2 sm-2">
-						<Thumbnail src={thumbnail} />
-					</Col>
-					<Col size="xs-6 sm-6">
-						<h3>{name}</h3>
-						<br />
-						<h5>City: {city}</h5>
-						<h5>State: {region} </h5>
-					</Col>
-
-					<Col size="xs-4 sm-4">
-						<button
-							className="btn btn-info"
-							id="collapseBtn"
-							data-toggle="collapse"
-							href={`#multiCollapseExample1${id}`}
-							role="button"
-							aria-expanded="false"
-							aria-controls="multiCollapseExample1"
-						>
-							<span id="collapseBtnText">View Trail Information</span>
-						</button>
-					</Col>
-				</Row>
-				<div class="collapse multi-collapse" id={`multiCollapseExample1${id}`}>
-					<br />
+	console.log(`AuthToken with TrailList:`, authToken)
+	if (authToken) {
+		return (
+			<div id="results-container">
+				<li className="list-group-item center" id={id}>
 					<Row>
-						<Col size="xs-10 sm-10">
-							<p>
-								Trail Description: <br />
-								{description}
-							</p>
-						</Col>
-
 						<Col size="xs-2 sm-2">
-							<Button
-								type="success"
-								className="input-lg btn-sm ml-2"
-								onClick={handleAdd.bind(this, name, city, region, rating, length, url)}
+							<Thumbnail src={thumbnail} />
+						</Col>
+						<Col size="xs-6 sm-6">
+							<h3>{name}</h3>
+							<br />
+							<h5>City: {city}</h5>
+							<h5>State: {region} </h5>
+						</Col>
+
+						<Col size="xs-4 sm-4">
+							<button
+								className="btn btn-info"
+								id="collapseBtn"
+								data-toggle="collapse"
+								href={`#multiCollapseExample1${id}`}
+								role="button"
+								aria-expanded="false"
+								aria-controls="multiCollapseExample1"
 							>
-								Add Plan
-							</Button>
-							<Button type="danger" className="input-lg btn-sm ml-2 mt-2">
-								Mark as done
-							</Button>
-							<Button type="primary" className="input-lg btn-sm ml-2 mt-2 favorites">
-								Add to favorites
-							</Button>
+								<span id="collapseBtnText">View Trail Information</span>
+							</button>
 						</Col>
 					</Row>
+					<div class="collapse multi-collapse" id={`multiCollapseExample1${id}`}>
+						<br />
+						<Row>
+							<Col size="xs-10 sm-10">
+								<p>
+									Trail Description: <br />
+									{description}
+								</p>
+							</Col>
 
-					<Row>
-						<Col size="xs-3 sm-3">
-							<p>
-								<u>Rating: </u>
-								<br />
-								{rating} <br />
-								<span id="rating-stars">
-									<Ratings rating={Math.round(rating * 10) / 10} widgetRatedColors="brown">
-										<Ratings.Widget widgetDimension="20px" />
-										<Ratings.Widget widgetDimension="20px" />
-										<Ratings.Widget widgetDimension="20px" />
-										<Ratings.Widget widgetDimension="20px" />
-										<Ratings.Widget widgetDimension="20px" />
-									</Ratings>
-								</span>
-							</p>
+							<Col size="xs-2 sm-2">
+								<Button
+									type="success"
+									className="input-lg btn-sm ml-2"
+									onClick={handleAdd.bind(this, name, city, region, rating, length, url)}
+								>
+									Add Plan
+								</Button>
+								<Button type="danger" className="input-lg btn-sm ml-2 mt-2">
+									Mark as done
+								</Button>
+								<Button type="primary" className="input-lg btn-sm ml-2 mt-2 favorites">
+									Add to favorites
+								</Button>
+							</Col>
+						</Row>
 
-							<p>
-								<u>Trail Difficulty:</u> <br />
-								<span>{difficulty}</span>
-							</p>
+						<Row>
+							<Col size="xs-3 sm-3">
+								<p>
+									<u>Rating: </u>
+									<br />
+									{rating} <br />
+									<span id="rating-stars">
+										<Ratings rating={Math.round(rating * 10) / 10} widgetRatedColors="brown">
+											<Ratings.Widget widgetDimension="20px" />
+											<Ratings.Widget widgetDimension="20px" />
+											<Ratings.Widget widgetDimension="20px" />
+											<Ratings.Widget widgetDimension="20px" />
+											<Ratings.Widget widgetDimension="20px" />
+										</Ratings>
+									</span>
+								</p>
 
-							<p>
-								<u>Trail Distance:</u> <br />
-								<span>{length} mi. </span>
-							</p>
+								<p>
+									<u>Trail Difficulty:</u> <br />
+									<span>{difficulty}</span>
+								</p>
 
-							<p>
-								<u>Features:</u> <br />
-								<p>{features}</p>
-							</p>
-						</Col>
+								<p>
+									<u>Trail Distance:</u> <br />
+									<span>{length} mi. </span>
+								</p>
 
-						<Col size="xs-9 sm-9">
-							<GoogleApiWrapper lat={lat} lng={lon} />
-						</Col>
-					</Row>
+								<p>
+									<u>Features:</u> <br />
+									<p>{features}</p>
+								</p>
+							</Col>
 
-					{/* <Col size="xs-3 sm-3">
+							<Col size="xs-9 sm-9">
+								<GoogleApiWrapper lat={lat} lng={lon} />
+							</Col>
+						</Row>
+
+						{/* <Col size="xs-3 sm-3">
 					<div>
 					Coordinates:            
 					<p>
@@ -142,8 +145,118 @@ export function TrailListItem({
 					</p>
 					</div>
 				</Col>  */}
-				</div>
-			</li>
-		</div>
-	);
+					</div>
+				</li>
+			</div>
+		);
+	} else {
+		return (
+			<div id="results-container">
+				<li className="list-group-item center" id={id}>
+					<Row>
+						<Col size="xs-2 sm-2">
+							<Thumbnail src={thumbnail} />
+						</Col>
+						<Col size="xs-6 sm-6">
+							<h3>{name}</h3>
+							<br />
+							<h5>City: {city}</h5>
+							<h5>State: {region} </h5>
+						</Col>
+
+						<Col size="xs-4 sm-4">
+							<button
+								className="btn btn-info"
+								id="collapseBtn"
+								data-toggle="collapse"
+								href={`#multiCollapseExample1${id}`}
+								role="button"
+								aria-expanded="false"
+								aria-controls="multiCollapseExample1"
+							>
+								<span id="collapseBtnText">View Trail Information</span>
+							</button>
+						</Col>
+					</Row>
+					<div class="collapse multi-collapse" id={`multiCollapseExample1${id}`}>
+						<br />
+						<Row>
+							<Col size="xs-10 sm-10">
+								<p>
+									Trail Description: <br />
+									{description}
+								</p>
+							</Col>
+
+							{/* <Col size="xs-2 sm-2">
+								<Button
+									type="success"
+									className="input-lg btn-sm ml-2"
+									onClick={handleAdd.bind(this, name, city, region, rating, length, url)}
+								>
+									Add Plan
+								</Button>
+								<Button type="danger" className="input-lg btn-sm ml-2 mt-2">
+									Mark as done
+								</Button>
+								<Button type="primary" className="input-lg btn-sm ml-2 mt-2 favorites">
+									Add to favorites
+								</Button>
+							</Col> */}
+						</Row>
+
+						<Row>
+							<Col size="xs-3 sm-3">
+								<p>
+									<u>Rating: </u>
+									<br />
+									{rating} <br />
+									<span id="rating-stars">
+										<Ratings rating={Math.round(rating * 10) / 10} widgetRatedColors="brown">
+											<Ratings.Widget widgetDimension="20px" />
+											<Ratings.Widget widgetDimension="20px" />
+											<Ratings.Widget widgetDimension="20px" />
+											<Ratings.Widget widgetDimension="20px" />
+											<Ratings.Widget widgetDimension="20px" />
+										</Ratings>
+									</span>
+								</p>
+
+								<p>
+									<u>Trail Difficulty:</u> <br />
+									<span>{difficulty}</span>
+								</p>
+
+								<p>
+									<u>Trail Distance:</u> <br />
+									<span>{length} mi. </span>
+								</p>
+
+								<p>
+									<u>Features:</u> <br />
+									<p>{features}</p>
+								</p>
+							</Col>
+
+							<Col size="xs-9 sm-9">
+								<GoogleApiWrapper lat={lat} lng={lon} />
+							</Col>
+						</Row>
+
+						{/* <Col size="xs-3 sm-3">
+					<div>
+					Coordinates:            
+					<p>
+					Latitude: {lat}
+					</p>            
+					<p>
+					Longitude: {lon}
+					</p>
+					</div>
+				</Col>  */}
+					</div>
+				</li>
+			</div>
+		);
+	}
 }
