@@ -8,6 +8,12 @@ import './style.css'
 
 
 const Done_Column = (props) => {
+
+	console.log()
+
+	function GetDone() {
+
+	}
 	return (
 		
 <div id="done-container">	
