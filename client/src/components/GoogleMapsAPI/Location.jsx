@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import {
-	TrailList,
-	TrailListItem
-} from "../TrailList/index";
-import Home from "../pages/Home"
-
 
 const mapStyles = {
 
@@ -13,21 +7,13 @@ const mapStyles = {
     width: '725px',
     height: '300px',
     float: "right",
-    "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"  
+    "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+    mapTypeId: 'satellite'
   }
 };
 export class CurrentLocation extends React.Component {
     constructor(props) {
     super(props);
-    // console.log('location',props)
-    //const { lat, lng } = this.props.initialCenter;
-    // console.log( 'location',this.props.initialCenter)
-    // const  {lat} = this.props.lat 
-    // console.log("FIND LAT: " + lat)   
-
-    // const  {lng} = this.props.lon
-    // console.log("FIND LON: " + lng)
-
     
   }
       state = {
@@ -68,17 +54,13 @@ export class CurrentLocation extends React.Component {
       // checks if google is available
       const { google } = this.props;
       const maps = google.maps;
-
       const mapRef = this.refs.map;
 
       // reference to the actual DOM element
       const node = ReactDOM.findDOMNode(mapRef);
-
       let { zoom } = this.props;
       const { lat, lng } = this.state.currentLocation;
       const center = new maps.LatLng(lat, lng);
-      console.log('___________'+lat+lng)
-      console.log(center)
       const mapConfig = Object.assign(
         {},
         {
@@ -94,7 +76,6 @@ export class CurrentLocation extends React.Component {
   recenterMap() {
     const map = this.map;
     const current = this.state.currentLocation;
-
     const google = this.props.google;
     const maps = google.maps;
 
@@ -108,7 +89,6 @@ export class CurrentLocation extends React.Component {
     const { children } = this.props;
 
     if (!children) return;
-console.log(this.state);
     return React.Children.map(children, c => {
       if (!c) return;
       return React.cloneElement(c, {
@@ -123,7 +103,7 @@ console.log(this.state);
     const style = Object.assign({}, mapStyles.map);
 
     return (
-      <div>
+      <div className="col-xs-9">
         <div style={style} ref='map'>
           Loading map...
         </div>
@@ -136,7 +116,7 @@ export default CurrentLocation;
 
 CurrentLocation.defaultProps = {
   
-  zoom: 18,
+  zoom: 16,
   initialCenter: {
     lat: 35.227085,
     lng: -80.843124

@@ -1,8 +1,9 @@
 import React from 'react';
+import './style.css'
 
 const Plan_Column = (props) => {
 	return <div>
-		<h3 className="text-center">Planned</h3>
+		<h3 className="text-center" id="profileHeader">Planned Treks</h3>
 	</div>;
 };
 
