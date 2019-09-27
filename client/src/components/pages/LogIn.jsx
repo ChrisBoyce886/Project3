@@ -29,7 +29,7 @@ class LogIn extends Component {
 				this.props.setAuthState(res.data);
 				console.log(this.props)
 				this.props.setAuthState(res.data)
-				this.props.history.push("/UserProfile")
+				this.props.history.push("/")
 			})
 			.catch((err) => {
 				console.log(`Error from API function Authenticate User`, err);
