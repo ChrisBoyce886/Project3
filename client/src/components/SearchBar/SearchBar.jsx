@@ -72,7 +72,6 @@ console.log(res.data.data)
 		//which can be found by doing the following line
 	
 		var top = this.document.getElementById('#scroll-stop').offset().top;
-	console.log("TOP: " + top)
 		window.onscroll = function () {
 			if (top <= window.scrollTop()) {
 				// if so, add the fixed class
@@ -105,7 +104,7 @@ render = () => {
 				/>
 			</div>		
 			</div>	
-			<div className="jumbotron"> 
+			<div> 
         <Row>
             <Col size="xl-12">
               
