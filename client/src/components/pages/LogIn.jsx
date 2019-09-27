@@ -24,9 +24,12 @@ class LogIn extends Component {
 		// console.log(`Typed credentials`, this.state)
 		CredentialsAPI.AuthenticateUser(this.state)
 			.then((res) => {
-				window.localStorage.setItem('authToken', res.data);
+				window.sessionStorage.setItem('authToken', res.data);
+				console.log(res.data)
 				this.props.setAuthState(res.data);
-				this.props.history.push("/UserProfile")
+				console.log(this.props)
+				this.props.setAuthState(res.data)
+				this.props.history.push("/")
 			})
 			.catch((err) => {
 				console.log(`Error from API function Authenticate User`, err);

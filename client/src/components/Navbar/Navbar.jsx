@@ -7,7 +7,7 @@ class Navbar extends Component {
 	LogOut = () => {
 		console.log('Ran Logout Function');
 		this.props.setAuthState(null);
-		window.localStorage.removeItem('authToken');
+		window.sessionStorage.removeItem('authToken');
 	};
 
 	render() {
@@ -59,7 +59,7 @@ class Navbar extends Component {
 						<ul className="nav justify-content-end">
 							<li className="nav-item">
 								<Link to="/" className="nav-link active">
-									<h4 className="nav-item">Home</h4>
+									<h4 className="nav-item">Search</h4>
 								</Link>
 							</li>
 							<li className="nav-item">
