@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from "./Logo"
 import NavbarStyle from "./NavbarStyle.css"
 
 function Navbar() {
@@ -7,7 +8,7 @@ function Navbar() {
 			<nav className= "navbar sticky-top navbar-dark bg-dark">				
 				
 				<a href="/" className="navbar-brand display-4">
-					
+					<Logo></Logo>
 					<h3 className="display-4" id="EarthTrekLogo">Earth Trek</h3>
 				</a>
 				<ul className="nav justify-content-end">

@@ -1,43 +1,56 @@
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {
 	TrailList,
 	TrailListItem
 } from "../TrailList/index";
+import Home from "../pages/Home"
+
 
 const mapStyles = {
+
   map: {
-    width: '600px',
-    height: '250px'
+    width: '725px',
+    height: '300px',
+    float: "right",
+    "box-shadow": "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"  
   }
 };
 export class CurrentLocation extends React.Component {
-  constructor(props) {
+    constructor(props) {
     super(props);
+    // console.log('location',props)
+    //const { lat, lng } = this.props.initialCenter;
+    // console.log( 'location',this.props.initialCenter)
+    // const  {lat} = this.props.lat 
+    // console.log("FIND LAT: " + lat)   
 
-    const { lat, lng } = this.props.initialCenter;
+    // const  {lng} = this.props.lon
+    // console.log("FIND LON: " + lng)
+
     
-    this.state = {
-      currentLocation: {
-        lat: lat,
-        lng: lng
-      }
-    };
   }
-  componentDidMount() {
-    if (this.props.centerAroundCurrentLocation) {
-      if (navigator && navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(pos => {
-          const coords = pos.coords;
-          this.setState({
-            currentLocation: {
-              lat: coords.latitude,
-              lng: coords.longitude
-            }
-          });
-        });
+      state = {
+      currentLocation: {
+        lat: this.props.lat,
+        lng: this.props.lng
       }
     }
+  componentDidMount() {
+   
+    // if (this.props.centerAroundCurrentLocation) {
+    //   if (navigator && navigator.geolocation) {
+    //     navigator.geolocation.getCurrentPosition(pos => {
+    //       const coords = pos.coords;
+    //       this.setState({
+    //         currentLocation: {
+    //           lat: coords.latitude,
+    //           lng: coords.longitude
+    //         }
+    //       });
+    //     });
+    //   }
+    // }
     this.loadMap();
   }
 
@@ -64,6 +77,8 @@ export class CurrentLocation extends React.Component {
       let { zoom } = this.props;
       const { lat, lng } = this.state.currentLocation;
       const center = new maps.LatLng(lat, lng);
+      console.log('___________'+lat+lng)
+      console.log(center)
       const mapConfig = Object.assign(
         {},
         {
@@ -93,7 +108,7 @@ export class CurrentLocation extends React.Component {
     const { children } = this.props;
 
     if (!children) return;
-
+console.log(this.state);
     return React.Children.map(children, c => {
       if (!c) return;
       return React.cloneElement(c, {
@@ -120,6 +135,7 @@ export class CurrentLocation extends React.Component {
 export default CurrentLocation;
 
 CurrentLocation.defaultProps = {
+  
   zoom: 18,
   initialCenter: {
     lat: 35.227085,

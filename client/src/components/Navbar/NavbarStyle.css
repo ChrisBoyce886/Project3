@@ -5,9 +5,18 @@
     width: 100%;
 }
 
+#logo {
+    display: inline-block;
+    width: 125px;
+    height: 75px;
+    margin-left: -3%;
+    margin-top: -10%
+}
+
 #EarthTrekLogo {
+    display: inline-block;
     color: rgb(4, 147, 190) !important;
-    margin-left: 10%
+    margin-left: 5%
 }
 
 #nav-item {

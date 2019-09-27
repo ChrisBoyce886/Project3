@@ -13,14 +13,14 @@ import Ratings from 'react-ratings-declarative';
 import GoogleApiWrapper from '../GoogleMapsAPI/GoogleMap';
 
 
-
-
 // Exporting both RecipeList and RecipeListItem from this file
 
 // RecipeList renders a bootstrap list item
 export function TrailList({ children }) {
+	
   return <ul className="list-group scrollable">{children}</ul>;
 }
+
 
 // RecipeListItem renders a bootstrap list item containing data from the recipe api call
 export function TrailListItem({
@@ -41,19 +41,33 @@ export function TrailListItem({
 	// deleteTrail
 }) {
 	return (
-		<div>
+		<div id="results-container">
+			
 			<li className="list-group-item center" id={id}>
 				<Row>
 					<Col size="xs-2 sm-2">
-						<Thumbnail src={thumbnail} />
+						<Thumbnail src={thumbnail}/>
 					</Col>
-					<Col size="xs-8 sm-8">
-					<a class="" data-toggle="collapse" href={`#multiCollapseExample1${id}`} role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
-						<h3>Name : {name}</h3></a>
-						<h4>Location : {city}</h4>
-						<h5>State : {region} </h5>
+					<Col size="xs-6 sm-6">
+						<h3>{name}</h3><br></br>
+						<h5>City: {city}</h5>
+						<h5>State: {region} </h5>
 					</Col>
+				
 					
+						<Col size="xs-4 sm-4">
+							<button className="btn btn-info" id="collapseBtn" data-toggle="collapse" href={`#multiCollapseExample1${id}`} role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
+								<span id="collapseBtnText">View Trail Information</span>
+							</button>
+						</Col>
+					</Row>
+					<div class="collapse multi-collapse" id={`multiCollapseExample1${id}`}>
+						<br></br>
+					<Row>						
+						<Col size="xs-10 sm-10">
+						<p>Trail Description: <br></br>{description}</p>
+					</Col>
+
 					<Col size="xs-2 sm-2">
 						<Button type="success" className="input-lg btn-sm ml-2">
 							Add Plan
@@ -61,33 +75,18 @@ export function TrailListItem({
 						<Button type="danger" className="input-lg btn-sm ml-2 mt-2">
 							Mark as done
 						</Button>
-						<Button type="primary" className="input-lg btn-sm ml-2 mt-2">
+						<Button type="primary" className="input-lg btn-sm ml-2 mt-2 favorites">
 							Add to favorites
 						</Button>
 					</Col>
 				</Row>
-				<div class="collapse multi-collapse" id={`multiCollapseExample1${id}`}>
-				<Row>
-					
-					<Col size="xs-12 sm-12">
-						<p>Description: {description}</p>
-					</Col>
-				</Row>
+				
+				
 				<Row>
 					<Col size="xs-3 sm-3">
 						<p>
-							Features : <p>{features}</p>
-						</p>
-					</Col>
-					<Col size="xs-3 sm-3">
-						<p>
-							Difficulty : <span>{difficulty}</span>
-						</p>
-					</Col>
-					<Col size="xs-3 sm-3">
-						<p>
-							Rating : {rating}
-							<span>
+							<u>Rating:  </u><br></br>{rating} <br></br>							
+							<span id="rating-stars">
 								<Ratings rating={Math.round(rating * 10) / 10} widgetRatedColors="brown">
 									<Ratings.Widget widgetDimension="20px" />
 									<Ratings.Widget widgetDimension="20px" />
@@ -97,33 +96,53 @@ export function TrailListItem({
 								</Ratings>
 							</span>
 						</p>
-					</Col>
-					<Col size="xs-3 sm-3">
+
 						<p>
-							Distance : <span>{length}mi. </span>
+							<u>Trail Difficulty:</u> <br></br> 
+							<span>{difficulty}</span>
+						</p>
+
+						<p>
+							<u>Trail Distance:</u> <br></br>
+							<span>{length} mi. </span>
+						</p>
+
+						<p>
+							<u>Features:</u> <br></br>
+							<p>{features}</p>
 						</p>
 					</Col>
-				</Row>
-        <Row>     
-          <Col size="xs-3 sm-3">
-            <div>
-            Coordinates:            
-            <p>
-            Latitude: {lat}
-            </p>            
-            <p>
-            Longitude: {lon}
-            </p>
-            </div>
+					
+				 <Col size="xs-9 sm-9">
+            
+            <GoogleApiWrapper
+			lat={lat}
+			lng={lon}
+			></GoogleApiWrapper>  
+            
           </Col> 
-          <Col size="xs-3 sm-3">
+					
+				</Row>
             
-            <GoogleApiWrapper></GoogleApiWrapper>  
-            
-          </Col>               
-        </Row>
+				{/* <Col size="xs-3 sm-3">
+					<div>
+					Coordinates:            
+					<p>
+					Latitude: {lat}
+					</p>            
+					<p>
+					Longitude: {lon}
+					</p>
+					</div>
+				</Col>  */}
+                       
+        
 		</div>
 			</li>
+
+			
 		</div>
+
+		
 	);
 }

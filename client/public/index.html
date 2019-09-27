@@ -24,7 +24,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:700|Fredoka+One|Patua+One&display=swap" rel="stylesheet">
     <!--Bootstrap Link  -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -47,14 +47,70 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <style>
-    #root {
-      background-image: url("https://www.tokkoro.com/picsup/5734080-hiking-wallpapers.jpg");
+      #root, html {
+        height: 100vh !important;
+        width: 100% !important; 
+     
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-position: center;
       background-size: 100% 100%;
       background-color: white;
+      backface-visibility: hidden;
+      animation: slideBg 3s linear infinite 0s;
+      animation-timing-function: ease-in-out;
+ background-image: url("https://www.tokkoro.com/picsup/5734080-hiking-wallpapers.jpg") !important;
     }
+
+    @keyframes {
+      0% {
+        background-image: url("https://www.tokkoro.com/picsup/5734080-hiking-wallpapers.jpg");
+      }
+      25% {
+        background-image: url("https://cranbrooktourism.com/uploads/site/hero/Cranbrook_CommunityForest_ChrisIstace-04325-xl.jpg");
+      }
+      50% {
+        background-image: url("https://wallpaperbro.com/img/420740.jpg");
+      }
+      75% {
+        background-image: url("http://getwallpapers.com/wallpaper/full/c/8/8/614551.jpg");
+      }
+      100% {
+        background-image: url("https://www.travelmoney.co.nz/sites/v1.travelmoney.co.nz/files/fcl-blog/Travel%20to%20Canada.jpg");
+      }
+    }
+
+    /* #b2, html, body {
+        height: 100% !important;
+        width: 100% !important;  
+      background-image: url("https://cranbrooktourism.com/uploads/site/hero/Cranbrook_CommunityForest_ChrisIstace-04325-xl.jpg") !important;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-position: center;
+      background-size: 100% 100%;
+      background-color: white;
+    } */
     </style>
+
+    <script>
+
+// function run(interval, frames) {
+//     var int = 1;
+    
+//     function func() {
+//         document.body.id = "b"+int;
+//         int++;
+//         if(int === frames) { int = 1; }
+//     }
+    
+//     var swap = window.setInterval(func, interval);
+// }
+
+// run(10000, 10); //milliseconds, frames
+
+      </script>
+    
   </body>
 </html>
+
+

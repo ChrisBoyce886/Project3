@@ -3,11 +3,14 @@ import SearhBar from '../SearchBar/SearchBar'
 import style from '../Main_styles/style.css'
 
 function Home() {
+    console.log('mark it',SearhBar.state)
     return (
         <div className="main_container">
-            <SearhBar></SearhBar>
+            <SearhBar>
+            </SearhBar>
         </div>
     )
+   
 };
 
 export default Home;

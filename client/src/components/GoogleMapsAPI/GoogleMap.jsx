@@ -4,8 +4,12 @@ import CurrentLocation from './Location';
 
 
 export class MapContainer extends Component {
-  state = {
-    showingInfoWindow: false,
+  constructor(props) {
+    super(props);
+    console.log('props here', props.lat)
+  }
+    state = {
+    showingInfoWindow: true,
     activeMarker: {},
     selectedPlace: {}
   };
@@ -28,7 +32,13 @@ export class MapContainer extends Component {
 
   render() {
     return (
-      <CurrentLocation centerAroundCurrentLocation google={this.props.google}>
+      <CurrentLocation centerAroundCurrentLocation 
+      lat={this.props.lat}
+      lng={this.props.lng}
+      google={this.props.google}
+      zoom={15}
+      >
+        
         <Marker onClick={this.onMarkerClick} name={'Trail Location'} />
         <InfoWindow
           marker={this.state.activeMarker}
@@ -45,5 +55,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: process.env.REACT_APP_GOOGLEMAPSAPIKEY
+  apiKey: "AIzaSyCTwlnvuNPf2SQsdtovRTH6dyTablFaooE"
 })(MapContainer);
