@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import './NavbarStyle.css';
 
 class Navbar extends Component {
-
 	LogOut = () => {
 		console.log('Ran Logout Function');
 		this.props.setAuthState(null);
@@ -15,16 +14,16 @@ class Navbar extends Component {
 			return (
 				<div>
 					<nav className="navbar sticky-top navbar-dark bg-dark">
-						<a href="/" className="navbar-brand display-4">
+						<Link to="/" className="navbar-brand display-4">
 							<h3 className="display-4" id="EarthTrekLogo">
 								Earth Trek
 							</h3>
-						</a>
+						</Link>
 						<ul className="nav justify-content-end">
 							<li className="nav-item">
-								<a href="/" className="nav-link active">
-									<h4 cl="nav-item">Home</h4>
-								</a>
+								<Link to="/" className="nav-link active">
+									<h4 className="nav-item">Home</h4>
+								</Link>
 							</li>
 							<li className="nav-item">
 								<Link to="/AboutUs/" className="nav-link active">
@@ -32,14 +31,14 @@ class Navbar extends Component {
 								</Link>
 							</li>
 							<li className="nav-item">
-								<a href="/LogIn/" className="nav-link active">
-									<h4 id="nav-item">Log In</h4>
-								</a>
+								<Link to="/LogIn" className="nav-link active">
+									<h4 className="nav-item">Log In</h4>
+								</Link>
 							</li>
 							<li className="nav-item">
-								<a href="/SignUp/" className="nav-link active">
-									<h4 id="nav-item">Sign Up</h4>
-								</a>
+								<Link to="/SignUp/" className="nav-link active">
+									<h4 className="nav-item">Sign Up</h4>
+								</Link>
 							</li>
 						</ul>
 					</nav>
@@ -49,16 +48,16 @@ class Navbar extends Component {
 			return (
 				<div>
 					<nav className="navbar sticky-top navbar-dark bg-dark">
-						<a href="/" className="navbar-brand display-4">
+						<Link to="/" className="navbar-brand display-4">
 							<h3 className="display-4" id="EarthTrekLogo">
 								Earth Trek
 							</h3>
-						</a>
+						</Link>
 						<ul className="nav justify-content-end">
 							<li className="nav-item">
-								<a href="/" className="nav-link active">
-									<h4 id="nav-item">Home</h4>
-								</a>
+								<Link to="/" className="nav-link active">
+									<h4 className="nav-item">Home</h4>
+								</Link>
 							</li>
 							<li className="nav-item">
 								<Link to="/AboutUs/" className="nav-link active">
@@ -66,14 +65,14 @@ class Navbar extends Component {
 								</Link>
 							</li>
 							<li className="nav-item">
-								<a href="/UserProfile/" className="nav-link active">
+								<Link to="/UserProfile/" className="nav-link active">
 									<h4 id="nav-item">Profile</h4>
-								</a>
+								</Link>
 							</li>
 							<li className="nav-item">
-								<a href="/" onClick={this.LogOut} className="nav-link active">
+								<Link to="/" onClick={this.LogOut} className="nav-link active">
 									<h4 id="nav-item">Logout</h4>
-								</a>
+								</Link>
 							</li>
 						</ul>
 					</nav>
