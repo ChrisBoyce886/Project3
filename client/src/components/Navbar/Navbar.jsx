@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './NavbarStyle.css';
+import Logo from './Logo'
 
 class Navbar extends Component {
 	LogOut = () => {
@@ -15,6 +16,7 @@ class Navbar extends Component {
 				<div>
 					<nav className="navbar sticky-top navbar-dark bg-dark">
 						<Link to="/" className="navbar-brand display-4">
+						<Logo />
 							<h3 className="display-4" id="EarthTrekLogo">
 								Earth Trek
 							</h3>
@@ -49,6 +51,7 @@ class Navbar extends Component {
 				<div>
 					<nav className="navbar sticky-top navbar-dark bg-dark">
 						<Link to="/" className="navbar-brand display-4">
+						<Logo />
 							<h3 className="display-4" id="EarthTrekLogo">
 								Earth Trek
 							</h3>
