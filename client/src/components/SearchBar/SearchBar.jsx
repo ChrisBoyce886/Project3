@@ -79,8 +79,12 @@ class SearchBar extends Component {
 		//which can be found by doing the following line
 
 		var top = this.document.getElementById('#scroll-stop').offset().top;
+<<<<<<< HEAD
 		console.log('TOP: ' + top);
 		window.onscroll = function() {
+=======
+		window.onscroll = function () {
+>>>>>>> results-page
 			if (top <= window.scrollTop()) {
 				// if so, add the fixed class
 				this.document.getElementById('#scroll-stop').addClass('fixed');
@@ -91,6 +95,7 @@ class SearchBar extends Component {
 		};
 	};
 
+<<<<<<< HEAD
 	render = () => {
 		// console.log('lat',this.state.trails)
 		return (
@@ -123,6 +128,34 @@ class SearchBar extends Component {
 							<Col size="xl-12">
 								<TrailList>
 									{/* <div className="text-align-center" id="your-results">
+=======
+render = () => {
+	// console.log('lat',this.state.trails)
+	return (
+		<div className="container">
+		<div className="form-group   align-items-center m-0">	
+		<div className="scroll-top" value={this.scrollStop} onscroll={this.scrollStop}>		
+			<h1 htmlFor="search" className="text center" value={this.scrollStop} onscroll={this.scrollStop} id="header">Find Your Next Adventure!</h1>
+			<div className="container d-flex search_container">
+				<input
+				id="homeInput"				
+				value={this.state.trailSearch}
+				onChange={this.handleInputChange}
+				placeholder="Enter a city"
+				className="form-control" name="trailSearch" />
+			<SubmitBtn
+				type="success"
+				onClick={this.handleSubmit}
+				/>
+			</div>		
+			</div>	
+			<div> 
+        <Row>
+            <Col size="xl-12">
+              
+                <TrailList>
+			{/* <div className="text-align-center" id="your-results">
+>>>>>>> results-page
 				  <p id="your-results">Your Results</p>
 			  </div> */}
 									{this.state.trails.map((trail) => {
