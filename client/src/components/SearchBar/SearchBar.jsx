@@ -66,29 +66,53 @@ console.log(res.data.data)
 		// API.
 	}
 
+	scrollStop = () => {
+		 var top = 100
+		//this should be the offset of the top of your div 
+		//which can be found by doing the following line
+	
+		var top = this.document.getElementById('#scroll-stop').offset().top;
+	console.log("TOP: " + top)
+		window.onscroll = function () {
+			if (top <= window.scrollTop()) {
+				// if so, add the fixed class
+				this.document.getElementById('#scroll-stop').addClass('fixed');
+			} else {
+				// otherwise remove it
+				this.document.getElementById('#scroll-stop').removeClass('fixed');
+			}
+		}
+	}
+	
 
 render = () => {
 	// console.log('lat',this.state.trails)
 	return (
 		<div className="container">
-		<div className="form-group   align-items-center m-0">
-			<h2 htmlFor="search" className="text center">Find your best route!</h2>
+		<div className="form-group   align-items-center m-0">	
+		<div className="scroll-top" value={this.scrollStop} onscroll={this.scrollStop}>		
+			<h1 htmlFor="search" className="text center" value={this.scrollStop} onscroll={this.scrollStop} id="header">Find Your Next Adventure!</h1>
 			<div className="container d-flex search_container">
-				<input 
+				<input
+				id="homeInput"				
 				value={this.state.trailSearch}
 				onChange={this.handleInputChange}
-				placeholder="Search for Trails"
-				className="form-control mr-2" name="trailSearch" />
-				<SubmitBtn
+				placeholder="Enter a city"
+				className="form-control" name="trailSearch" />
+			<SubmitBtn
 				type="success"
 				onClick={this.handleSubmit}
 				/>
-			</div>
+			</div>		
+			</div>	
 			<div className="jumbotron"> 
         <Row>
             <Col size="xl-12">
               
                 <TrailList>
+			{/* <div className="text-align-center" id="your-results">
+				  <p id="your-results">Your Results</p>
+			  </div> */}
                   {this.state.trails.map(trail => {
                     return (
                       <TrailListItem
@@ -107,6 +131,7 @@ render = () => {
 						lat={trail.lat}
 						lon={trail.lon}
                       />
+					  
                     );
                   })}
                 </TrailList>

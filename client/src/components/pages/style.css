@@ -1,0 +1,122 @@
+.card {
+    opacity: .85;
+    width: 40%;
+    height: 30%;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom: 0%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);    
+}
+
+#signupCard {
+    margin-bottom: 8%;
+}
+
+.card-header {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold !important;  
+     color: rgb(4, 147, 190);
+    font-size: 150%;
+    /* font-family: 'Comfortaa', cursive; */
+}
+
+.form-group {
+    margin: 0;
+}
+
+#signupContainer {
+    margin: 0 !important;
+}
+
+#signupLabel {
+    margin-left: 0;   
+}
+
+#signupInput {
+    margin-left: 0;
+    width: 95% !important;
+    margin-bottom: 10%;    
+    height: 50px !important;
+    color: black !important;
+    font-size: 125% !important;
+    border-color: rgb(4, 147, 190) !important;
+    box-shadow: -5px 5px rgb(4, 147, 190);
+    display:inline-block !important;
+    /* vertical-align: middle !important; */
+}
+
+#SignupBtn {
+    color: white !important;
+    background-color: rgb(4, 147, 190);
+    border-color: rgb(4, 147, 190);
+    height: 50px !important;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 40%;
+    font-size: 125%;
+    display:inline-block !important;
+    transition: all 0.5s;
+    cursor: pointer;    
+    /* vertical-align: middle !important; */
+}
+
+#SignupBtn span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+
+#SignupBtn span:after {
+    content: '\00BB';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  #SignupBtn:hover span {
+    padding-right: 25px;
+  }
+  
+  #SignupBtn:hover span:after {
+    opacity: 1;
+    right: 0;    
+  }
+
+#loginInput {
+    margin-left: 0;
+    width: 95% !important;
+    margin-bottom: 10%;    
+    height: 50px !important;
+    color: black !important;
+    font-size: 125% !important;
+    border-color: rgb(4, 147, 190) !important;
+    box-shadow: -5px 5px rgb(4, 147, 190);
+    display:inline-block !important;
+    /* vertical-align: middle !important; */
+}
+
+.about-us-container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#aboutus-header {
+    font-size: 200%;
+    color: rgb(4, 147, 190);
+}
+
+#github-link{
+    color: rgb(4, 147, 190);
+    margin: 0 auto;
+    text-align: center;
+}
+
+#github-link:hover {
+    color: green
+}
+

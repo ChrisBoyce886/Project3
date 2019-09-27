@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import SubmitBtn from '../SubmitBtn/SubmitBtn';
+import SignupBtn from '../SubmitBtn/SignupBtn';
 import CredentialsAPI from '../../utils/CredentialsAPI';
+import style from "./style.css"
 
 
 class SignUp extends Component {
@@ -37,65 +38,74 @@ class SignUp extends Component {
 
 	render() {
 		return (
-			<form className="container mt-4">
+			<div className="card text-align-center" id="signupCard">
+				<div className="card-header text-align-center">Sign Up</div>
+				<div className="card-body">
+			<form className="container mt-4" id="signupContainer">
 				<div className="form-group">
-					<label htmlFor="FirstName">First Name</label>
+					<label id="signupLabel" htmlFor="FirstName">First Name</label><br />
 					<input
+						id="signupInput"
 						type="text"
 						className="form-control"
 						name="firstname"
 						value={this.state.firstname}
 						onChange={this.handleInputChange}
-						placeholder="First Name"
+						placeholder="Enter First Name"
 					/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="LastName">Last Name</label>
+					<label id="signupLabel" htmlFor="LastName">Last Name</label><br />
 					<input
+						id="signupInput"
 						type="text"
 						className="form-control"
 						name="lastname"
 						value={this.state.lastname}
 						onChange={this.handleInputChange}
-						placeholder="Last Name"
+						placeholder="Enter Last Name"
 					/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="Email">Email</label>
+					<label id="signupLabel" htmlFor="Email">Email</label><br />
 					<input
+						id="signupInput"
 						type="email"
 						className="form-control"
 						name="email"
 						value={this.state.email}
 						onChange={this.handleInputChange}
-						placeholder="Email Address"
+						placeholder="Enter Email Address"
 					/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="Username">Username</label>
+					<label id="signupLabel" htmlFor="Username">Username</label><br />
 					<input
+						id="signupInput"
 						type="username"
 						className="form-control"
 						name="username"
 						value={this.state.username}
 						onChange={this.handleInputChange}
-						placeholder="Username"
+						placeholder="Enter Username"
 					/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="Password">Password</label>
+					<label id="signupLabel" htmlFor="Password">Password</label><br />
 					<input
+						id="signupInput"
 						type="password"
 						className="form-control"
 						name="password"
 						value={this.state.password}
 						onChange={this.handleInputChange}
-						placeholder="Password"
+						placeholder="Enter Password"
 					/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="RetypePassword">Retype Password</label>
+					<label id="signupLabel" htmlFor="RetypePassword">Retype Password</label><br />
 					<input
+						id="signupInput"
 						type="password"
 						className="form-control"
 						name="retypedpassword"
@@ -104,8 +114,10 @@ class SignUp extends Component {
 						placeholder="Retype Your Password"
 					/>
 				</div>
-				<SubmitBtn type="success" onClick={this.handleSubmit} />
+				<SignupBtn type="success" onClick={this.handleSubmit} />
 			</form>
+			</div>
+			</div>
 		);
 	}
 }

@@ -7,6 +7,7 @@ import "./style.css";
 function Thumbnail({ src }) {
   return (
     <div
+      id="thumbnail"
       className="thumbnail"
       role="img"
       aria-label="Trail Image"

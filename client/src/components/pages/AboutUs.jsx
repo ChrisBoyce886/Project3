@@ -1,34 +1,21 @@
 import React from 'react';
 import GoogleApiWrapper, { MapContainer } from '../../components/GoogleMapsAPI/GoogleMap';
+import style from "./style.css"
 
 function AboutUs() {
-	return (
-		<div>
-			<div className="container">
-				<h1 className="justify-content-center text-center mt-5 display-3 font-weight-bold">
-					We are Earth Trek
-				</h1>
-				<p className="mt-4">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nihil explicabo sunt laboriosam ex
-					facere dolores error voluptatibus accusantium aliquam, commodi, hic molestias a reprehenderit aut
-					non officia quibusdam earum.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, nisi cumque? Quo recusandae quis
-					eaque expedita blanditiis veniam voluptate accusantium quaerat adipisci beatae, perspiciatis quidem
-					ratione accusamus, consectetur consequatur perferendis.
-				</p>
-				<p>
-					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo perferendis eum ducimus vero
-					repellendus aliquam numquam. Corporis, officiis! Provident quam pariatur esse, nobis quo tempora
-					quibusdam ex dolorum nulla repellendus. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Officia cupiditate dolorem perspiciatis est reiciendis esse enim inventore numquam iusto!
-					Repudiandae corrupti iste sapiente quaerat voluptates quidem. Voluptatibus error asperiores
-					veritatis?
-				</p>
-			</div>
-		</div>
-	);
-}
+    return (
+        <div className="card" id="aboutus-card">
+            <h1 className="card-header" id="aboutus-header">We are Earth Trek</h1>
+            <div className="card-body about-us-container">                
+                <p>Earth Trek is your one stop source of information for Hiking and Biking trails across the U.S.! Type in any U.S. city and get hiking and biking trail listings within 50 miles of that location.</p>
+                <p>Information for each trail includes its Name, Location, Map, a Description of the trail(s), Trail Difficulty level, Trail Distance, Hiker Rating/Reviews, and any Trail Features.</p>
+                <p>The website is implemented using React, Node.js, and several NPM packages which use a MySQL database to hold and pull data from. The trail information comes via an API for a national trail database called Trail API from RapidAPI.com. We also incorporated a Google Maps API to display each trails location.</p>
+                <p> Creators: Sean Nguyen, Bohdan Dziubliuk, Christopher Boyce</p>
+                <a href="https://github.com/ChrisBoyce886/Project3" target="blank" id="github-link">Github Link</a>
+            </div>        
+        </div>
+
+    )
+};
 
 export default AboutUs;

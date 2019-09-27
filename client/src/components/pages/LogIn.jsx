@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import SubmitBtn from '../SubmitBtn/SubmitBtn';
+import SignupBtn from '../SubmitBtn/SignupBtn';
 import CredentialsAPI from '../../utils/CredentialsAPI';
+import style from "./style.css"
 
 class LogIn extends Component {
 	state = {
@@ -33,10 +34,14 @@ class LogIn extends Component {
 	};
 	render() {
 		return (
+			<div className="card">
+				<div className="card-header">Login</div>
+				<div className="card-body text-align-center">
 			<form className="container mt-4">
 				<div className="form-group">
-					<label htmlFor="username">Username</label>
+					<label id="loginLabel" htmlFor="username">Username</label>
 					<input
+						id="loginInput"
 						type="text"
 						className="form-control"
 						name="username"
@@ -46,18 +51,21 @@ class LogIn extends Component {
 					/>
 				</div>
 				<div className="form-group">
-					<label htmlFor="password">Password</label>
+					<label id="loginLabel" htmlFor="password">Password</label>
 					<input
+						id="loginInput"
 						type="password"
 						className="form-control"
 						name="password"
 						value={this.state.password}
 						onChange={this.handleInputChange}
-						placeholder="Password"
+						placeholder="Enter Password"
 					/>
 				</div>
-				<SubmitBtn type="success" onClick={this.handleSubmit}/>
+				<SignupBtn type="success" onClick={this.handleSubmit} />
 			</form>
+			</div>
+			</div>
 		);
 	}
 }
