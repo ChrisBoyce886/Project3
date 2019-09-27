@@ -143,6 +143,7 @@ class SearchBar extends Component {
 												lat={trail.lat}
 												lon={trail.lon}
 												handleAdd={this.handleAdd}
+												authToken={this.props.authToken}
 											/>
 										);
 									})}
