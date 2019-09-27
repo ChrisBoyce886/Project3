@@ -69,12 +69,12 @@ class Navbar extends Component {
 							</li>
 							<li className="nav-item">
 								<Link to="/UserProfile" className="nav-link active">
-									<h4 id="nav-item">Profile</h4>
+									<h4 className="nav-item">Profile</h4>
 								</Link>
 							</li>
 							<li className="nav-item">
 								<Link to="/" onClick={this.LogOut} className="nav-link active">
-									<h4 id="nav-item">Logout</h4>
+									<h4 className="nav-item">Logout</h4>
 								</Link>
 							</li>
 						</ul>
