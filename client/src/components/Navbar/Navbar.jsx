@@ -7,7 +7,7 @@ class Navbar extends Component {
 	LogOut = () => {
 		console.log('Ran Logout Function');
 		this.props.setAuthState(null);
-		window.localStorage.removeItem('authToken');
+		window.sessionStorage.removeItem('authToken');
 	};
 
 	render() {

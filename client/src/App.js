@@ -22,7 +22,7 @@ class App extends Component {
 		});
 
 	componentDidMount() {
-		const authToken = localStorage.getItem('authToken');
+		const authToken = window.sessionStorage.getItem('authToken');
 
 		if (authToken) {
 			this.setAuthState(authToken);

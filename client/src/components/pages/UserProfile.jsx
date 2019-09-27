@@ -5,7 +5,10 @@ import Favorite_Column from '../Favorite_Column/Favorite_Column';
 
 
 
-const UserProfile = () => {
+const UserProfile = (props) => {
+
+	console.log(props)
+
 	return <div className="row mw-100">
 		<div className="col-4 h-75">
 			<Favorite_Column></Favorite_Column>
