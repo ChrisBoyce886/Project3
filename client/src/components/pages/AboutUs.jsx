@@ -2,7 +2,6 @@ import React from 'react';
 import GoogleApiWrapper, { MapContainer } from '../../components/GoogleMapsAPI/GoogleMap';
 import style from "./style.css"
 
-
 function AboutUs() {
     return (
         <div className="card" id="aboutus-card">

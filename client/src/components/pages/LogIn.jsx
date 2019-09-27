@@ -19,12 +19,14 @@ class LogIn extends Component {
 
 	handleSubmit = (event) => {
 		event.preventDefault();
+
+		
 		// console.log(`Typed credentials`, this.state)
 		CredentialsAPI.AuthenticateUser(this.state)
 			.then((res) => {
-				console.log(res.data);
 				window.localStorage.setItem('authToken', res.data);
-				this.props.history.push('/UserProfile');
+				this.props.setAuthState(res.data);
+				this.props.history.push("/UserProfile")
 			})
 			.catch((err) => {
 				console.log(`Error from API function Authenticate User`, err);

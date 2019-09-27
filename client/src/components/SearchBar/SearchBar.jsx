@@ -12,7 +12,7 @@ import {
 	TrailList,
 	TrailListItem
 } from "../TrailList/index";
-import style from './style.css'
+import './style.css'
 
 
 class SearchBar extends Component {
