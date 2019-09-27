@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './NavbarStyle.css';
 
 class Navbar extends Component {
 
 	LogOut = () => {
 		console.log('Ran Logout Function');
+		this.props.setAuthState(null);
 		window.localStorage.removeItem('authToken');
 	};
 
 	render() {
-		if (!localStorage.getItem('authToken')) {
+		if (!this.props.isAuthenticated) {
 			return (
 				<div>
 					<nav className="navbar sticky-top navbar-dark bg-dark">
@@ -22,13 +23,13 @@ class Navbar extends Component {
 						<ul className="nav justify-content-end">
 							<li className="nav-item">
 								<a href="/" className="nav-link active">
-									<h4 id="nav-item">Home</h4>
+									<h4 cl="nav-item">Home</h4>
 								</a>
 							</li>
 							<li className="nav-item">
-								<a href="/AboutUs/" className="nav-link active">
-									<h4 id="nav-item">About Us</h4>
-								</a>
+								<Link to="/AboutUs/" className="nav-link active">
+									<h4 className="nav-item">About Us</h4>
+								</Link>
 							</li>
 							<li className="nav-item">
 								<a href="/LogIn/" className="nav-link active">
@@ -60,9 +61,9 @@ class Navbar extends Component {
 								</a>
 							</li>
 							<li className="nav-item">
-								<a href="/AboutUs/" className="nav-link active">
-									<h4 id="nav-item">About Us</h4>
-								</a>
+								<Link to="/AboutUs/" className="nav-link active">
+									<h4 className="nav-item">About Us</h4>
+								</Link>
 							</li>
 							<li className="nav-item">
 								<a href="/UserProfile/" className="nav-link active">
@@ -70,7 +71,7 @@ class Navbar extends Component {
 								</a>
 							</li>
 							<li className="nav-item">
-								<a href="#" onClick={this.LogOut} className="nav-link active">
+								<a href="/" onClick={this.LogOut} className="nav-link active">
 									<h4 id="nav-item">Logout</h4>
 								</a>
 							</li>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import SubmitBtn from '../SubmitBtn/SubmitBtn';
 import CredentialsAPI from '../../utils/CredentialsAPI';
+import { withRouter } from 'react-router-dom'
 
 class LogIn extends Component {
 	state = {
@@ -23,9 +24,9 @@ class LogIn extends Component {
 		// console.log(`Typed credentials`, this.state)
 		CredentialsAPI.AuthenticateUser(this.state)
 			.then((res) => {
-				console.log(res.data);
 				window.localStorage.setItem('authToken', res.data);
-				this.props.history.push('/UserProfile');
+				this.props.setAuthState(res.data);
+				this.props.history.push("/UserProfile")
 			})
 			.catch((err) => {
 				console.log(`Error from API function Authenticate User`, err);
@@ -56,10 +57,10 @@ class LogIn extends Component {
 						placeholder="Password"
 					/>
 				</div>
-				<SubmitBtn type="success" onClick={this.handleSubmit} />
+				<SubmitBtn type="success" onClick={this.handleSubmit}/>
 			</form>
 		);
 	}
 }
 
-export default LogIn;
+export default withRouter(LogIn);
