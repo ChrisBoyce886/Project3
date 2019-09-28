@@ -31,6 +31,7 @@ Example: `var PORT = process.env.PORT || 3000`
 * Google Maps API takes in the coordinates information from the Trails API results and displays a map for each trail result with that trail being centered on its map, marked, and zoomed in depending on the size/distance of that trail.
 * The user can add a trail that they are interested in to their 'Favorites List' or can mark an already completed trail as 'Done'. 
 * Both favorited and completed trails will appear in their personal account.
+* User Profile page is currently still under construction.
 
 
 ## Demonstration gif:
