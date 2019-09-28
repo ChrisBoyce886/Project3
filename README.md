@@ -36,7 +36,7 @@ Example: `var PORT = process.env.PORT || 3000`
 
 ## Demonstration gif:
 
-* This gif demonstrates how to sign up, log in, seacrh for a location, it shows the results for Charlotte, NC, and finally this gif demonstrates how to view each trail information which inlcudes a trail decription, rating, difficulty, trail distance, and a map. 
+* This gif demonstrates how to sign up, log in, and search for a location. This example displays the results for Charlotte, NC and demonstrates how to view each trails specific information which inlcudes a description, rating, difficulty, distance, and a map. 
    
 ![Earth-Trek](client/public/earth-trek.gif "earthtrek.gif")
   
