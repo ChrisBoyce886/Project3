@@ -134,17 +134,7 @@ export function TrailListItem({
 							</Col>
 						</Row>
 
-						{/* <Col size="xs-3 sm-3">
-					<div>
-					Coordinates:            
-					<p>
-					Latitude: {lat}
-					</p>            
-					<p>
-					Longitude: {lon}
-					</p>
-					</div>
-				</Col>  */}
+					
 					</div>
 				</li>
 			</div>
