@@ -63,6 +63,7 @@ Example: `var PORT = process.env.PORT || 3000`
 * [Passport-Local](https://www.npmjs.com/package/passport-local)
 * [Path](https://www.npmjs.com/package/path)
 * [React-Ratings-Declarative](https://www.npmjs.com/package/react-ratings-declarative)
+* [React-Router-Dom](https://www.npmjs.com/package/react-router-dom)
 * [React-Star-Ratings](https://www.npmjs.com/package/react-star-ratings)
 * [Sequelize](https://www.npmjs.com/package/sequelize)
 
