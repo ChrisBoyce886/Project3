@@ -32,11 +32,12 @@ Example: `var PORT = process.env.PORT || 3000`
 * The user can add a trail that they are interested in to their 'Favorites List' or can mark an already completed trail as 'Done'. 
 * Both favorited and completed trails will appear in their personal account.
 
+
 ## Demonstration gif:
 
 * This gif demonstrates how to sign up, log in, seacrh for a location, it shows the results for Charlotte, NC, and finally this gif demonstrates how to view each trail information which inlcudes a trail decription, rating, difficulty, trail distance, and a map. 
    
-![Earth-Trek]( "earthtrek.gif")
+![Earth-Trek](client/public/earth-trek.gif "earthtrek.gif")
   
         
 ## Built With
