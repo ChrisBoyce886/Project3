@@ -78,7 +78,7 @@ class SearchBar extends Component {
 		//this should be the offset of the top of your div
 		//which can be found by doing the following line
 		var top = this.document.getElementById('#scroll-stop').offset().top;
-		window.onscroll = function () {
+		window.onScroll = function () {
 			if (top <= window.scrollTop()) {
 				// if so, add the fixed class
 				this.document.getElementById('#scroll-stop').addClass('fixed');
@@ -94,8 +94,8 @@ render = () => {
 	return (
 		<div className="container">
 		<div className="form-group   align-items-center m-0">	
-		<div className="scroll-top" value={this.scrollStop} onscroll={this.scrollStop}>		
-			<h1 htmlFor="search" className="text center" value={this.scrollStop} onscroll={this.scrollStop} id="header">Find Your Next Adventure!</h1>
+		<div className="scroll-top" value={this.scrollStop} onScroll={this.scrollStop}>		
+			<h1 htmlFor="search" className="text center" value={this.scrollStop} onScroll={this.scrollStop} id="header">Find Your Next Adventure!</h1>
 			<div className="container d-flex search_container">
 				<input
 				id="homeInput"				
