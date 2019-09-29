@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css'
 
-const Plan_Column = (props) => {
+const PlanColumn = (props) => {
 
 	function GetPlanned () {
 
@@ -12,4 +12,4 @@ const Plan_Column = (props) => {
 	</div>;
 };
 
-export default Plan_Column
+export default PlanColumn

@@ -1,7 +1,7 @@
 import React from 'react'
 import './style.css'
 
-const Favorite_Column = (props) => {
+const FavoriteColumn = (props) => {
 
     function GetFavorites() {
 
@@ -17,4 +17,4 @@ const Favorite_Column = (props) => {
     </div>
 }
 
-export default Favorite_Column
+export default FavoriteColumn
