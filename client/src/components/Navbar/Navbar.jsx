@@ -5,7 +5,7 @@ import Logo from './Logo'
 
 class Navbar extends Component {
 	LogOut = () => {
-		console.log('Ran Logout Function');
+		// console.log('Ran Logout Function');
 		this.props.setAuthState(null);
 		window.sessionStorage.removeItem('authToken');
 	};

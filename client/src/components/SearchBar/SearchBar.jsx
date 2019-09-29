@@ -26,7 +26,7 @@ class SearchBar extends Component {
 		this.setState({
 			[name]: value
 		});
-		console.log(value);
+		// console.log(value);
 	};
 
 	handleSubmit = (event) => {
@@ -42,7 +42,7 @@ class SearchBar extends Component {
 							lon: data.features[0].geometry.coordinates[0],
 							lat: data.features[0].geometry.coordinates[1]
 						});
-						console.log(res.data.data);
+						// console.log(res.data.data);
 					})
 					.catch((err) => console.log(err));
 			})
@@ -68,7 +68,7 @@ class SearchBar extends Component {
 			lenght: length,
 			url: url
 		};
-		console.log(`Selected Trail:`, trail);
+		// console.log(`Selected Trail:`, trail);
 		// alert('Trail added');
 		// CredentialsAPI.PlannedTrail(trail)
 	};

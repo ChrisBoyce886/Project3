@@ -7,7 +7,7 @@ import Favorite_Column from '../Favorite_Column/Favorite_Column';
 
 const UserProfile = (props) => {
 
-	console.log(`User's Auth Token:`, props.authToken)
+	// console.log(`User's Auth Token:`, props.authToken)
 
 	return <div className="row mw-100">
 		<div className="col-4 h-75">
