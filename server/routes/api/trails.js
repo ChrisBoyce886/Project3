@@ -28,6 +28,6 @@ router.get("/trails/:lat/:lon", (req, res) => {
           res.json(data);
         })
         .catch(err => res.status(422).json(err));
-    
 })
+
 module.exports = router;

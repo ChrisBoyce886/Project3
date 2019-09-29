@@ -68,9 +68,8 @@ class SearchBar extends Component {
 			lenght: length,
 			url: url
 		};
-		// console.log(`Selected Trail:`, trail);
-		// alert('Trail added');
-		// CredentialsAPI.PlannedTrail(trail)
+		console.log(`Selected Trail:`, trail);
+		API.planTrail(trail)
 	};
 
 	scrollStop = () => {
