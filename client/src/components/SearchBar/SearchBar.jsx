@@ -77,7 +77,7 @@ class SearchBar extends Component {
 		var top = 100;
 		//this should be the offset of the top of your div
 		//which can be found by doing the following line
-		var top = this.document.getElementById('#scroll-stop').offset().top;
+		top = this.document.getElementById('#scroll-stop').offset().top;
 		window.onScroll = function () {
 			if (top <= window.scrollTop()) {
 				// if so, add the fixed class
