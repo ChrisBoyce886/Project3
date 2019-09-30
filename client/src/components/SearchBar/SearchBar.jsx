@@ -65,7 +65,7 @@ class SearchBar extends Component {
 			city: city,
 			region: region,
 			rating: rating,
-			lenght: length,
+			length: length,
 			url: url
 		};
 		console.log(`Selected Trail:`, trail);
