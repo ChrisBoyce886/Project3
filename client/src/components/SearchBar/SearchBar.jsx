@@ -26,7 +26,7 @@ class SearchBar extends Component {
 		this.setState({
 			[name]: value
 		});
-		console.log(value);
+		// console.log(value);
 	};
 
 	handleSubmit = (event) => {
@@ -42,7 +42,7 @@ class SearchBar extends Component {
 							lon: data.features[0].geometry.coordinates[0],
 							lat: data.features[0].geometry.coordinates[1]
 						});
-						console.log(res.data.data);
+						// console.log(res.data.data);
 					})
 					.catch((err) => console.log(err));
 			})
@@ -65,20 +65,19 @@ class SearchBar extends Component {
 			city: city,
 			region: region,
 			rating: rating,
-			lenght: length,
+			length: length,
 			url: url
 		};
 		console.log(`Selected Trail:`, trail);
-		// alert('Trail added');
-		// CredentialsAPI.PlannedTrail(trail)
+		API.planTrail(trail)
 	};
 
 	scrollStop = () => {
 		var top = 100;
 		//this should be the offset of the top of your div
 		//which can be found by doing the following line
-		var top = this.document.getElementById('#scroll-stop').offset().top;
-		window.onscroll = function () {
+		top = this.document.getElementById('#scroll-stop').offset().top;
+		window.onScroll = function () {
 			if (top <= window.scrollTop()) {
 				// if so, add the fixed class
 				this.document.getElementById('#scroll-stop').addClass('fixed');
@@ -94,8 +93,8 @@ render = () => {
 	return (
 		<div className="container">
 		<div className="form-group   align-items-center m-0">	
-		<div className="scroll-top" value={this.scrollStop} onscroll={this.scrollStop}>		
-			<h1 htmlFor="search" className="text center" value={this.scrollStop} onscroll={this.scrollStop} id="header">Find Your Next Adventure!</h1>
+		<div className="scroll-top" value={this.scrollStop} onScroll={this.scrollStop}>		
+			<h1 htmlFor="search" className="text center" value={this.scrollStop} onScroll={this.scrollStop} id="header">Find Your Next Adventure!</h1>
 			<div className="container d-flex search_container">
 				<input
 				id="homeInput"				

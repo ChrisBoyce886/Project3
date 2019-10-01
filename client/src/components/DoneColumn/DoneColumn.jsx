@@ -7,7 +7,7 @@ import {
 import './style.css'
 
 
-const Done_Column = (props) => {
+const DoneColumn = (props) => {
 
 	console.log()
 
@@ -70,4 +70,4 @@ const Done_Column = (props) => {
 	)
 };
 
-export default Done_Column;
+export default DoneColumn;

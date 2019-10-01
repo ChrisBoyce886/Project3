@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SignupBtn from '../SubmitBtn/SignupBtn';
 import CredentialsAPI from '../../utils/CredentialsAPI';
-import style from "./style.css"
+import "./style.css"
 
 class LogIn extends Component {
 	state = {
@@ -25,9 +25,9 @@ class LogIn extends Component {
 		CredentialsAPI.AuthenticateUser(this.state)
 			.then((res) => {
 				window.sessionStorage.setItem('authToken', res.data);
-				console.log(res.data)
+				// console.log(res.data)
 				this.props.setAuthState(res.data);
-				console.log(this.props)
+				// console.log(this.props)
 				this.props.setAuthState(res.data)
 				this.props.history.push("/")
 			})

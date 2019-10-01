@@ -20,18 +20,18 @@ class App extends Component {
 			authToken,
 			isAuthenticated: Boolean(authToken)
 		});
-		console.log(`After setState is ran:`, this.state.authToken);
+		// console.log(`After setState is ran:`, this.state.authToken);
 	};
 
 	componentDidMount() {
 		const authToken = window.sessionStorage.getItem('authToken');
 
 		if (authToken) {
-			console.log(`AuthToken pulled for sessionStorage:`, authToken);
+			// console.log(`AuthToken pulled for sessionStorage:`, authToken);
 			this.setAuthState(authToken);
-			console.log(`The state.authToken:`, this.state.authToken);
+			// console.log(`The state.authToken:`, this.state.authToken);
 		} else {
-			console.log('No authToken');
+			// console.log('No authToken');
 		}
 	}
 

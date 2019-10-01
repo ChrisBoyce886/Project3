@@ -39,7 +39,7 @@ export function TrailListItem({
 	// saveTrail,
 	// deleteTrail
 }) {
-	console.log(`AuthToken with TrailList:`, authToken)
+	// console.log(`AuthToken with TrailList:`, authToken)
 	if (authToken) {
 		return (
 			<div id="results-container">

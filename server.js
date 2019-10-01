@@ -25,6 +25,7 @@ if (process.env.NODE_ENV === "production") {
 // Use apiRoutes
 app.use('/api',trailRoutes)
 require("./server/routes/api/UserAPI")(app)
+require("./server/routes/api/dbtrails")(app)
 
 // Initialize session for passport
 app.use(session({ secret: process.env.SESSION_SECRET, resave: true, saveUninitialized: true}));

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import SignupBtn from '../SubmitBtn/SignupBtn';
 import CredentialsAPI from '../../utils/CredentialsAPI';
-import style from "./style.css"
+import "./style.css"
 
 
 class SignUp extends Component {
@@ -24,7 +24,7 @@ class SignUp extends Component {
 	handleSubmit = (event) => {
 		event.preventDefault();
 		if (this.state.password === this.state.retypedpassword) {
-			console.log(`Passwords are the same`);
+			// console.log(`Passwords are the same`);
 			CredentialsAPI.CreateNewUser(this.state)
 		} else {
 			// need modal stating passwords are not the same
