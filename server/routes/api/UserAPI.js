@@ -11,7 +11,10 @@ module.exports = function(app) {
 			res.json(user.id);
 		})(req, res, next);
 	});
-
+	app.post('/planned/plan', (req, res) => {
+		console.log('REQUESTTTTT',req.body)
+	
+	})
 	// Post : Add User
 	app.post('/user/create', (req, res) => {
 		console.log(req.body);
@@ -30,11 +33,5 @@ module.exports = function(app) {
 				console.log(err.message);
 				res.status(401).json(err);
 			});
-		// console.log(`User id of signed up user:`, user.id);
-		// const payload = {
-		//     sub: user.id
-		// }
-
-		// jwt.sign(payload, secret);
 	});
 };

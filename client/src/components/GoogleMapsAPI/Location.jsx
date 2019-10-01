@@ -19,6 +19,7 @@ const mapStyles = {
 export class CurrentLocation extends React.Component {
     constructor(props) {
     super(props);
+
     // console.log('location',props)
     //const { lat, lng } = this.props.initialCenter;
     // console.log( 'location',this.props.initialCenter)
@@ -77,8 +78,7 @@ export class CurrentLocation extends React.Component {
       let { zoom } = this.props;
       const { lat, lng } = this.state.currentLocation;
       const center = new maps.LatLng(lat, lng);
-      console.log('___________'+lat+lng)
-      console.log(center)
+      
       const mapConfig = Object.assign(
         {},
         {
@@ -108,7 +108,7 @@ export class CurrentLocation extends React.Component {
     const { children } = this.props;
 
     if (!children) return;
-console.log(this.state);
+
     return React.Children.map(children, c => {
       if (!c) return;
       return React.cloneElement(c, {

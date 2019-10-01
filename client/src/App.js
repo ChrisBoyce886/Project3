@@ -35,7 +35,7 @@ class App extends Component {
 				<div>
 					<Navbar isAuthenticated={this.state.isAuthenticated} setAuthState={this.setAuthState} />
 					<Switch>
-						<Route exact path="/" component={Home} />
+						<Route exact path="/" component={Home}/>
 						<Route exact path="/AboutUs" component={AboutUs} />
 						<Route
 							exact

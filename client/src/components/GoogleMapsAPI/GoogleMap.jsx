@@ -6,7 +6,6 @@ import CurrentLocation from './Location';
 export class MapContainer extends Component {
   constructor(props) {
     super(props);
-    console.log('props here', props.lat)
   }
     state = {
     showingInfoWindow: true,
@@ -55,5 +54,5 @@ export class MapContainer extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: process.env.REACT_APP_GOOGLEMAPSAPIKEY
+  apiKey: "AIzaSyCTwlnvuNPf2SQsdtovRTH6dyTablFaooE"
 })(MapContainer);

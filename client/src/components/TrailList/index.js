@@ -36,7 +36,8 @@ export function TrailListItem({
 	url,
   	length, 
   	lat, 
-  	lon
+	  lon,
+	  handleAdd
 	// saveTrail,
 	// deleteTrail
 }) {
@@ -69,7 +70,7 @@ export function TrailListItem({
 					</Col>
 
 					<Col size="xs-2 sm-2">
-						<Button type="success" className="input-lg btn-sm ml-2">
+						<Button type="success" className="input-lg btn-sm ml-2" onClick={handleAdd.bind(this,name, city, region, rating, length, url) }>
 							Add Plan
 						</Button>
 						<Button type="danger" className="input-lg btn-sm ml-2 mt-2">
@@ -123,20 +124,6 @@ export function TrailListItem({
           </Col> 
 					
 				</Row>
-            
-				{/* <Col size="xs-3 sm-3">
-					<div>
-					Coordinates:            
-					<p>
-					Latitude: {lat}
-					</p>            
-					<p>
-					Longitude: {lon}
-					</p>
-					</div>
-				</Col>  */}
-                       
-        
 		</div>
 			</li>
 

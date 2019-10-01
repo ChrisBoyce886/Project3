@@ -9,5 +9,8 @@ export default {
 		},
 	AuthenticateUser: function(info) {
 		return axios.post('/user/authenticate', info)
+	},
+	PlannedTrail: function (trail){
+		return axios.post('/planned/plan', trail)
 	}
 };

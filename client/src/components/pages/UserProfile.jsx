@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Plan_Column from '../Plan_Column/Plan_Column';
 import Done_Column from '../Done_Column/Done_Column';
 import Favorite_Column from '../Favorite_Column/Favorite_Column';
 
+class UserProfile extends Component {
+	
 
-
-const UserProfile = () => {
+	render(){
 	return <div className="row mw-100">
 		<div className="col-4 h-75">
 			<Favorite_Column></Favorite_Column>
@@ -18,5 +19,6 @@ const UserProfile = () => {
 		</div>
 	</div>;
 };
+}
 
 export default UserProfile;
