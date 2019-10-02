@@ -19,10 +19,10 @@
     margin-left: 5%
 }
 
-#nav-item {
+.nav-item {
     color: rgb(4, 147, 190) !important;
 }
 
-#nav-item:hover {
+.nav-item:hover {
     color: green !important
 }

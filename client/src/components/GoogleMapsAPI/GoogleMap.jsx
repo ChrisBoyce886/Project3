@@ -35,16 +35,16 @@ export class MapContainer extends Component {
       lat={this.props.lat}
       lng={this.props.lng}
       google={this.props.google}
-      zoom={15}
+      zoom={16}
       >
         
-        <Marker onClick={this.onMarkerClick} name={'Trail Location'} />
+        <Marker onClick={this.onMarkerClick} name={'current location'} />
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
           onClose={this.onClose}
         >
-          <div>
+          <div className="col-xs-9">
             <h4>{this.state.selectedPlace.name}</h4>
           </div>
         </InfoWindow>

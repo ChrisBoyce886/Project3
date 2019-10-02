@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
-import Plan_Column from '../Plan_Column/Plan_Column';
-import Done_Column from '../Done_Column/Done_Column';
-import Favorite_Column from '../Favorite_Column/Favorite_Column';
+import React from 'react';
+import FavoriteColumn from '../FavoriteColumn/FavoriteColumn';
+import PlanColumn from '../FavoriteColumn/FavoriteColumn';
+import DoneColumn from '../DoneColumn/DoneColumn';
 
-class UserProfile extends Component {
-	
-
-	render(){
-	return <div className="row mw-100">
-		<div className="col-4 h-75">
-			<Favorite_Column></Favorite_Column>
+const UserProfile = (props) => {
+	return (
+		<div className="row mw-100">
+			<div className="col-4 h-75">
+				<PlanColumn authToken={props.authToken}/>
+			</div>
+			<div className="col-4 h-75">
+				<FavoriteColumn authToken={props.authToken}/>
+			</div>
+			<div className="col-4 h-75">
+				<DoneColumn authToken={props.authToken}/>
+			</div>
 		</div>
-		<div className="col-4 h-75">
-			<Plan_Column></Plan_Column>
-		</div>
-		<div className="col-4 h-75">
-			<Done_Column></Done_Column>
-		</div>
-	</div>;
+	);
 };
-}
+
 
 export default UserProfile;

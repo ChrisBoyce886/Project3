@@ -31,6 +31,14 @@ Example: `var PORT = process.env.PORT || 3000`
 * Google Maps API takes in the coordinates information from the Trails API results and displays a map for each trail result with that trail being centered on its map, marked, and zoomed in depending on the size/distance of that trail.
 * The user can add a trail that they are interested in to their 'Favorites List' or can mark an already completed trail as 'Done'. 
 * Both favorited and completed trails will appear in their personal account.
+* User Profile page is currently still under construction.
+
+
+## Demonstration gif:
+
+* This gif demonstrates how to sign up, log in, and search for a location. This example displays the results for Charlotte, NC and demonstrates how to view each trails specific information which inlcudes a description, rating, difficulty, distance, and a map. 
+   
+![Earth-Trek](client/public/earth-trek.gif "earthtrek.gif")
   
         
 ## Built With
@@ -63,6 +71,7 @@ Example: `var PORT = process.env.PORT || 3000`
 * [Passport-Local](https://www.npmjs.com/package/passport-local)
 * [Path](https://www.npmjs.com/package/path)
 * [React-Ratings-Declarative](https://www.npmjs.com/package/react-ratings-declarative)
+* [React-Router-Dom](https://www.npmjs.com/package/react-router-dom)
 * [React-Star-Ratings](https://www.npmjs.com/package/react-star-ratings)
 * [Sequelize](https://www.npmjs.com/package/sequelize)
 

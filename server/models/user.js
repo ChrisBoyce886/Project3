@@ -52,13 +52,16 @@ module.exports = function (sequelize, DataTypes) {
 	});
 
 	User.associate = (models) => {
-		User.hasMany(models.Done, {
+		User.belongsToMany(models.Done, {
+			through: 'User_Done_Relation',
 			onDelete: 'cascade'
 		});
-		User.hasMany(models.Favorite, {
+		User.belongsToMany(models.Favorite, {
+			through: 'User_Favorite_Relation',
 			onDelete: 'cascade'
 		});
-		User.hasMany(models.Plan, {
+		User.belongsToMany(models.Plan, {
+			through: 'User_Plan_Relation',
 			onDelete: 'cascade'
 		});
 		return User;

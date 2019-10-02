@@ -1,15 +1,3 @@
-.jumbotron {
-    height: 530px;
-    background: transparent;
-    overflow: scroll;
-    overflow-y: visible;
-    padding: 0;
-    margin-bottom: 0;
-}
-::-webkit-scrollbar {
-    width: 0px;  /* Remove scrollbar space */
-    background: transparent;  /* Optional: just make scrollbar invisible */
-}
 
 
 .search {
