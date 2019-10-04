@@ -4,7 +4,7 @@
 
 The application is implemented using [React](https://reactjs.org/), [Node.js](https://nodejs.org/en/docs/), and several NPM packages which use a [MySQL](https://www.mysql.com/) database to hold and pull data from. The trail information comes via an API for a national trail database called [Trail API](https://rapidapi.com/trailapi/api/trailapi) from RapidAPI.com. We also incorporated a [Google Maps API](https://www.npmjs.com/package/google-map-react) to display each trails location. 
 
-Click [here](https://earth-trek.herokuapp.com/) to view the application!
+Click [here](https://earthtrekk.herokuapp.com/) to view the application!
 
 
 ## Installation / Deployment
